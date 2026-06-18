@@ -171,7 +171,8 @@ img {
     color: var(--clr-heritage-gold);
 }
 
-.btn--outline-gold:hover {
+.btn--outline-gold:hover,
+.header__link.btn--outline-gold:hover {
     background-color: var(--clr-heritage-gold);
     color: var(--clr-space-black);
     transform: translateY(-2px);
