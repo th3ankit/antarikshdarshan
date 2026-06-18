@@ -322,16 +322,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const successBox = document.getElementById('rfp-form-success');
     const formCard = document.getElementById('rfp-form-card');
 
+    // Check if redirect query parameter is present (after successful submission)
+    if (window.location.search.includes('submitted=true')) {
+        if (rfpForm && successBox) {
+            rfpForm.style.display = 'none';
+            successBox.style.display = 'block';
+            successBox.style.opacity = '1';
+            
+            // Scroll to the card
+            setTimeout(() => {
+                const offsetPosition = formCard.offsetTop - 100;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }, 500);
+        }
+    }
+
     if (rfpForm) {
         rfpForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
             // Simple validation check
             const nameInput = document.getElementById('official-name');
             const orgInput = document.getElementById('agency-name');
             const emailInput = document.getElementById('official-email');
             const phoneInput = document.getElementById('official-phone');
             const locationInput = document.getElementById('official-location');
+            const redirectUrlInput = document.getElementById('form-redirect-url');
             const submitBtn = rfpForm.querySelector('.form-submit-btn');
 
             const nameVal = nameInput.value.trim();
@@ -343,73 +360,25 @@ document.addEventListener('DOMContentLoaded', () => {
             // Basic regex checks
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(emailVal)) {
+                e.preventDefault();
                 alert('Please enter a valid email address.');
                 return;
             }
 
             if (phoneVal.length < 10) {
+                e.preventDefault();
                 alert('Please enter a valid contact number.');
                 return;
             }
 
-            // Show loading state
-            const originalBtnText = submitBtn.textContent;
+            // Set the redirect URL to the current page with query parameter
+            if (redirectUrlInput) {
+                redirectUrlInput.value = window.location.origin + window.location.pathname + '?submitted=true';
+            }
+
+            // Show sending state
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending Inquiry...';
-
-            // Submit using FormSubmit.co AJAX endpoint
-            fetch('https://formsubmit.co/ajax/dirpp@space-foundation.org', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    Name: nameVal,
-                    Organisation: orgVal,
-                    Email: emailVal,
-                    Phone: phoneVal,
-                    Location: locationVal,
-                    _subject: 'New Astro Tourism Partnership Inquiry',
-                    _template: 'table',
-                    _captcha: 'false'
-                })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Animate transition to success card
-                rfpForm.style.transition = 'opacity 0.3s ease';
-                rfpForm.style.opacity = '0';
-
-                setTimeout(() => {
-                    rfpForm.style.display = 'none';
-                    successBox.style.display = 'block';
-                    successBox.style.opacity = '0';
-                    
-                    // Trigger scroll offset alignment to success card
-                    const offsetPosition = formCard.offsetTop - 100;
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    setTimeout(() => {
-                        successBox.style.transition = 'opacity 0.5s ease';
-                        successBox.style.opacity = '1';
-                    }, 50);
-                }, 300);
-            })
-            .catch(error => {
-                console.error('Submission error:', error);
-                alert('There was an error submitting the form. Please try again.');
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
-            });
         });
     }
 
