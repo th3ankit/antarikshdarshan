@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         navLinks.forEach(link => {
+            if (link.classList.contains('btn')) return;
             const href = link.getAttribute('href');
             if (href === `#${currentSectionId}`) {
                 link.classList.add('header__link--active');
