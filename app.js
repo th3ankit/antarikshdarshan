@@ -327,13 +327,23 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             // Simple validation check
-            const phoneVal = document.getElementById('official-phone').value;
-            const emailVal = document.getElementById('official-email').value;
+            const nameInput = document.getElementById('official-name');
+            const orgInput = document.getElementById('agency-name');
+            const emailInput = document.getElementById('official-email');
+            const phoneInput = document.getElementById('official-phone');
+            const locationInput = document.getElementById('official-location');
+            const submitBtn = rfpForm.querySelector('.form-submit-btn');
+
+            const nameVal = nameInput.value.trim();
+            const orgVal = orgInput.value.trim();
+            const emailVal = emailInput.value.trim();
+            const phoneVal = phoneInput.value.trim();
+            const locationVal = locationInput.value.trim();
 
             // Basic regex checks
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(emailVal)) {
-                alert('Please enter a valid official email address.');
+                alert('Please enter a valid email address.');
                 return;
             }
 
@@ -342,39 +352,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Animate transition to success card
-            rfpForm.style.transition = 'opacity 0.3s ease';
-            rfpForm.style.opacity = '0';
+            // Show loading state
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending Inquiry...';
 
-            setTimeout(() => {
-                rfpForm.style.display = 'none';
-                successBox.style.display = 'block';
-                successBox.style.opacity = '0';
-                
-                // Trigger scroll offset alignment to success card
-                const offsetPosition = formCard.offsetTop - 100;
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-                
+            // Submit using FormSubmit.co AJAX endpoint
+            fetch('https://formsubmit.co/ajax/dirpp@space-foundation.org', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    Name: nameVal,
+                    Organisation: orgVal,
+                    Email: emailVal,
+                    Phone: phoneVal,
+                    Location: locationVal,
+                    _subject: 'New Astro Tourism Partnership Inquiry',
+                    _template: 'table',
+                    _captcha: 'false'
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Animate transition to success card
+                rfpForm.style.transition = 'opacity 0.3s ease';
+                rfpForm.style.opacity = '0';
+
                 setTimeout(() => {
-                    successBox.style.transition = 'opacity 0.5s ease';
-                    successBox.style.opacity = '1';
-                }, 50);
-            }, 300);
-
-            // Log B2B lead capture events (simulated submission payload)
-            console.log('--- B2B LEAD CAPTURE SYSTEM ---');
-            console.log('Agency:', document.getElementById('agency-name').value);
-            console.log('Representative:', document.getElementById('official-name').value);
-            console.log('Designation:', document.getElementById('official-designation').value);
-            console.log('Email:', emailVal);
-            console.log('Phone:', phoneVal);
-            console.log('Objective:', document.getElementById('campaign-objective').value);
-            console.log('Scale:', document.getElementById('campaign-scale').value);
-            console.log('Notes:', document.getElementById('campaign-notes').value);
-            console.log('-------------------------------');
+                    rfpForm.style.display = 'none';
+                    successBox.style.display = 'block';
+                    successBox.style.opacity = '0';
+                    
+                    // Trigger scroll offset alignment to success card
+                    const offsetPosition = formCard.offsetTop - 100;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    setTimeout(() => {
+                        successBox.style.transition = 'opacity 0.5s ease';
+                        successBox.style.opacity = '1';
+                    }, 50);
+                }, 300);
+            })
+            .catch(error => {
+                console.error('Submission error:', error);
+                alert('There was an error submitting the form. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            });
         });
     }
 
