@@ -1,0 +1,18 @@
+# Jekyll Configuration
+title: Antariksh Darshan
+description: Public-Private Partnerships in Astrotourism
+
+# Exclude virtual environments and scripts from the GitHub Pages build process
+exclude:
+  - venv/
+  - .venv/
+  - venv
+  - .venv
+  - .DS_Store
+  - "*.py"
+  - "*.pyc"
+  - crm_data_cleaned.csv
+  - .git/
+  - .gitignore
+  - .agents/
+  - README.md
