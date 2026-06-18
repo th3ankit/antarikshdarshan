@@ -1462,12 +1462,14 @@ textarea.form-input {
     background-color: var(--clr-space-black);
     padding-top: calc(var(--header-height) + 1.5rem);
     padding-bottom: 1rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    box-sizing: border-box;
+}
+
+.event-banner-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
+    width: 100%;
 }
 
 .event-banner-img {
@@ -1498,8 +1500,6 @@ textarea.form-input {
     .event-banner-section {
         padding-top: calc(var(--header-height) + 1.25rem);
         padding-bottom: 0.75rem;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
     }
     .event-banner-img {
         border-width: 3px;
@@ -1513,8 +1513,6 @@ textarea.form-input {
     .event-banner-section {
         padding-top: calc(var(--header-height) + 1rem);
         padding-bottom: 0.5rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
     .event-banner-section + .hero .hero__container {
         padding-top: 1.5rem;
