@@ -360,15 +360,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Basic regex checks
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            const dict = (typeof translations !== 'undefined' && translations[currentLang]) ? translations[currentLang].contact : null;
+
             if (!emailRegex.test(emailVal)) {
                 e.preventDefault();
-                alert('Please enter a valid email address.');
+                alert(dict ? dict.validation_email : 'Please enter a valid email address.');
                 return;
             }
 
             if (phoneVal.length < 10) {
                 e.preventDefault();
-                alert('Please enter a valid contact number.');
+                alert(dict ? dict.validation_phone : 'Please enter a valid contact number.');
                 return;
             }
 
@@ -379,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Show sending state
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending Inquiry...';
+            submitBtn.textContent = dict ? dict.sending_inquiry : 'Sending Inquiry...';
         });
     }
 
@@ -454,5 +457,88 @@ document.addEventListener('DOMContentLoaded', () => {
                 transitionToSlide(prevIndex);
             }
         }
+    }
+
+    // ==========================================
+    // MULTILINGUAL INTEGRATION & TRANSLATION DESK
+    // ==========================================
+    const langSelect = document.getElementById('lang-select');
+    
+    function applyTranslations(lang) {
+        if (typeof translations === 'undefined' || !translations[lang]) return;
+        
+        const dictionary = translations[lang];
+        
+        // Helper to resolve nested keys (e.g. "nav.home" -> translations[lang].nav.home)
+        function getTranslationValue(keyPath) {
+            const keys = keyPath.split('.');
+            let val = dictionary;
+            for (let key of keys) {
+                if (val && typeof val === 'object') {
+                    val = val[key];
+                } else {
+                    return null;
+                }
+            }
+            return val;
+        }
+        
+        // Translate inner content
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const keyPath = el.getAttribute('data-i18n');
+            const translation = getTranslationValue(keyPath);
+            if (translation !== null) {
+                el.innerHTML = translation;
+            }
+        });
+        
+        // Translate input placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const keyPath = el.getAttribute('data-i18n-placeholder');
+            const translation = getTranslationValue(keyPath);
+            if (translation !== null) {
+                el.setAttribute('placeholder', translation);
+            }
+        });
+        
+        // Translate image alt attributes
+        document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+            const keyPath = el.getAttribute('data-i18n-alt');
+            const translation = getTranslationValue(keyPath);
+            if (translation !== null) {
+                el.setAttribute('alt', translation);
+            }
+        });
+
+        // Set document title
+        if (dictionary.title) {
+            document.title = dictionary.title;
+        }
+
+        // Apply RTL layout support if Urdu is selected
+        if (lang === 'ur') {
+            document.body.classList.add('rtl-layout');
+            document.body.setAttribute('dir', 'rtl');
+        } else {
+            document.body.classList.remove('rtl-layout');
+            document.body.removeAttribute('dir');
+        }
+        
+        // Trigger resize event to recalculate card slider offsets dynamically
+        window.dispatchEvent(new Event('resize'));
+    }
+    
+    // Language dropdown change handler
+    if (langSelect) {
+        langSelect.addEventListener('change', (e) => {
+            const selectedLang = e.target.value;
+            localStorage.setItem('preferredLanguage', selectedLang);
+            applyTranslations(selectedLang);
+        });
+        
+        // Check for saved user preference, default to English
+        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        langSelect.value = savedLang;
+        applyTranslations(savedLang);
     }
 });

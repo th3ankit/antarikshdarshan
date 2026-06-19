@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antariksh Darshan | Premium Astrotourism & Space Science Initiatives by Space India</title>
+    <title data-i18n="title">Antariksh Darshan | Premium Astrotourism & Space Science Initiatives by Space India</title>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Sponsor premium astrotourism and space science initiatives like Antariksh Darshan by SPACE Group. Activate tourism post-sunset at Yamuna Bank, Hamirpur, and other heritage sites. Partner with SPACE Group.">
@@ -43,28 +43,45 @@
                 <img src="assets/logo-astro-tourism.png" alt="Astro Tourism Badge" class="logo-astro-tourism">
             </div>
             
-            <nav class="header__nav" id="nav-menu">
-                <a href="#hero" class="header__link header__link--active">Home</a>
-                <a href="#experiences" class="header__link">Experiences</a>
-                <a href="#benefits" class="header__link">Benefits</a>
-                <a href="#case-study" class="header__link">Case Study</a>
-                <a href="#proposal-specs" class="header__link">Proposal</a>
-                <a href="#gallery" class="header__link">Gallery</a>
-                <a href="#connect" class="btn btn--outline-gold btn--sm header__link" style="padding: 0.5rem 1.25rem;">Partner With Us</a>
-            </nav>
+            <div class="header__actions-wrap">
+                <nav class="header__nav" id="nav-menu">
+                    <a href="#hero" class="header__link header__link--active" data-i18n="nav.home">Home</a>
+                    <a href="#experiences" class="header__link" data-i18n="nav.experiences">Experiences</a>
+                    <a href="#benefits" class="header__link" data-i18n="nav.benefits">Benefits</a>
+                    <a href="#case-study" class="header__link" data-i18n="nav.case_study">Case Study</a>
+                    <a href="#proposal-specs" class="header__link" data-i18n="nav.proposal">Proposal</a>
+                    <a href="#gallery" class="header__link" data-i18n="nav.gallery">Gallery</a>
+                    <a href="#connect" class="btn btn--outline-gold btn--sm header__link" data-i18n="nav.partner_with_us">Partner With Us</a>
+                </nav>
 
-            <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                <div class="lang-selector">
+                    <i class="fa-solid fa-globe"></i>
+                    <select id="lang-select" aria-label="Select Language">
+                        <option value="en">EN</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="mr">मराठी</option>
+                        <option value="te">తెలుగు</option>
+                        <option value="ta">தமிழ்</option>
+                        <option value="kn">ಕನ್ನಡ</option>
+                        <option value="pa">ਪੰਜਾਬੀ</option>
+                        <option value="ur">اردو</option>
+                    </select>
+                </div>
+
+                <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
     <!-- Main Event Banner -->
     <div class="event-banner-section">
         <div class="container event-banner-container">
-            <img src="assets/main-event-banner.jpg" alt="Antariksh Darshan Main Event Banner" class="event-banner-img">
+            <img src="assets/main-event-banner.jpg" alt="Antariksh Darshan Main Event Banner" class="event-banner-img" data-i18n-alt="event_banner.alt">
+            <h2 class="event-banner-title" data-i18n="event_banner.title">Bringing India's Premier Astrotourism Festival to Indian Heritage Sites</h2>
         </div>
     </div>
 
@@ -85,29 +102,29 @@
         <div class="container hero__container">
             <!-- Left Info Panel -->
             <div class="hero__content">
-                <span class="hero__experience-label">Experience 01</span>
+                <span class="hero__experience-label" data-i18n="hero.experience_label">Experience 01</span>
                 
                 <div class="hero__title-container">
-                    <h1 class="hero__title active" data-index="0">Digital Planetarium:<br><span class="text-gold">The Portable Cosmos</span></h1>
-                    <h1 class="hero__title" data-index="1">Celestial Observations:<br><span class="text-gold">Solar & Deep-Sky Exploring</span></h1>
-                    <h1 class="hero__title" data-index="2">Virtual Voyager:<br><span class="text-gold">Orbital VR Experience</span></h1>
-                    <h1 class="hero__title" data-index="3">Ancient Timekeeping:<br><span class="text-gold">DIY Sundial Workshops</span></h1>
-                    <h1 class="hero__title" data-index="4">Gravity Kiosks:<br><span class="text-gold">Weigh on Other Worlds</span></h1>
-                    <h1 class="hero__title" data-index="5">Chemical Rocketry:<br><span class="text-gold">Pop Rocket Launch Zone</span></h1>
+                    <h1 class="hero__title active" data-index="0" data-i18n="hero.title_0">Digital Planetarium:<br><span class="text-gold">The Portable Cosmos</span></h1>
+                    <h1 class="hero__title" data-index="1" data-i18n="hero.title_1">Celestial Observations:<br><span class="text-gold">Solar & Deep-Sky Exploring</span></h1>
+                    <h1 class="hero__title" data-index="2" data-i18n="hero.title_2">Virtual Voyager:<br><span class="text-gold">Orbital VR Experience</span></h1>
+                    <h1 class="hero__title" data-index="3" data-i18n="hero.title_3">Ancient Timekeeping:<br><span class="text-gold">DIY Sundial Workshops</span></h1>
+                    <h1 class="hero__title" data-index="4" data-i18n="hero.title_4">Gravity Kiosks:<br><span class="text-gold">Weigh on Other Worlds</span></h1>
+                    <h1 class="hero__title" data-index="5" data-i18n="hero.title_5">Chemical Rocketry:<br><span class="text-gold">Pop Rocket Launch Zone</span></h1>
                 </div>
 
                 <div class="hero__description-container">
-                    <p class="hero__description active" data-index="0"><span class="hero__subtitle">Digital Mobile Planetarium Dome</span>Deploy a mobile dome theater with multiple Hindi/English shows. Utilizing high-definition digital projections, it hosts 1,000+ students and visitors daily for deep-space journeys and stellar simulations, requiring zero permanent infrastructure.</p>
-                    <p class="hero__description" data-index="1"><span class="hero__subtitle">Daytime Solar Views & Night-Sky Stargazing</span>Observe solar prominences and sunspots safely during the day using specialized filters. At night, track deep-sky objects (planets, nebulae, clusters) through computerized motorized telescopes, extending stays and reviving night-time visitor activity.</p>
-                    <p class="hero__description" data-index="2"><span class="hero__subtitle">6-DOF Astronaut VR Experience</span>Step inside an immersive VR zone simulating a spacewalk outside the International Space Station. Using 6-DOF headsets, users experience simulated zero-gravity orbits and lunar landings, bridging academic theory with state-of-the-art public engagement.</p>
-                    <p class="hero__description" data-index="3"><span class="hero__subtitle">DIY Equatorial Sundial Making</span>A hands-on astronomical workshop where participants build functioning sundials to calculate solar time and local latitude. Highlights India's historical archeo-astronomy through take-home STEM models.</p>
-                    <p class="hero__description" data-index="4"><span class="hero__subtitle">Gravity Kiosks</span>Interactive electronic scales showing visitors their weight across other planets in the solar system. A memorable attraction that teaches gravitational physics and planetary metrics through personalized engagement.</p>
-                    <p class="hero__description" data-index="5"><span class="hero__subtitle">DIY Chemical Rocketry Demonstrations</span>Translate physics into tactile rocketry challenges. Students construct and launch chemical pop-rockets using pressurized kits to analyze Newtonian action-reaction mechanics and flight trajectory ratios.</p>
+                    <p class="hero__description active" data-index="0" data-i18n="hero.description_0"><span class="hero__subtitle">Digital Mobile Planetarium Dome</span>Deploy a mobile dome theater with multiple Hindi/English shows. Utilizing high-definition digital projections, it hosts 1,000+ students and visitors daily for deep-space journeys and stellar simulations, requiring zero permanent infrastructure.</p>
+                    <p class="hero__description" data-index="1" data-i18n="hero.description_1"><span class="hero__subtitle">Daytime Solar Views & Night-Sky Stargazing</span>Observe solar prominences and sunspots safely during the day using specialized filters. At night, track deep-sky objects (planets, nebulae, clusters) through computerized motorized telescopes, extending stays and reviving night-time visitor activity.</p>
+                    <p class="hero__description" data-index="2" data-i18n="hero.description_2"><span class="hero__subtitle">6-DOF Astronaut VR Experience</span>Step inside an immersive VR zone simulating a spacewalk outside the International Space Station. Using 6-DOF headsets, users experience simulated zero-gravity orbits and lunar landings, bridging academic theory with state-of-the-art public engagement.</p>
+                    <p class="hero__description" data-index="3" data-i18n="hero.description_3"><span class="hero__subtitle">DIY Equatorial Sundial Making</span>A hands-on astronomical workshop where participants build functioning sundials to calculate solar time and local latitude. Highlights India's historical archeo-astronomy through take-home STEM models.</p>
+                    <p class="hero__description" data-index="4" data-i18n="hero.description_4"><span class="hero__subtitle">Gravity Kiosks</span>Interactive electronic scales showing visitors their weight across other planets in the solar system. A memorable attraction that teaches gravitational physics and planetary metrics through personalized engagement.</p>
+                    <p class="hero__description" data-index="5" data-i18n="hero.description_5"><span class="hero__subtitle">DIY Chemical Rocketry Demonstrations</span>Translate physics into tactile rocketry challenges. Students construct and launch chemical pop-rockets using pressurized kits to analyze Newtonian action-reaction mechanics and flight trajectory ratios.</p>
                 </div>
 
                 <div class="hero__actions">
-                    <a href="#experiences" class="btn btn--primary" id="discover-experience-btn">Discover Experience</a>
-                    <a href="#connect" class="btn btn--outline">Request Proposal</a>
+                    <a href="#experiences" class="btn btn--primary" id="discover-experience-btn" data-i18n="hero.discover_experience">Discover Experience</a>
+                    <a href="#connect" class="btn btn--outline" data-i18n="hero.request_proposal">Request Proposal</a>
                 </div>
             </div>
 
@@ -118,47 +135,47 @@
                         <div class="slider-card active" data-index="0" style="background-image: url('assets/mahoba-planetarium.jpg');">
                             <div class="slider-card__content">
                                 <span class="slider-card__num">01</span>
-                                <h3 class="slider-card__title">Astro Dome</h3>
+                                <h3 class="slider-card__title" data-i18n="hero.card_title_0">Astro Dome</h3>
                             </div>
                         </div>
                         <div class="slider-card" data-index="1" style="background-image: url('assets/hamirpur-dm-laser.jpg');">
                             <div class="slider-card__content">
                                 <span class="slider-card__num">02</span>
-                                <h3 class="slider-card__title">Observations</h3>
+                                <h3 class="slider-card__title" data-i18n="hero.card_title_1">Observations</h3>
                             </div>
                         </div>
                         <div class="slider-card" data-index="2" style="background-image: url('assets/mahoba-dm-vr.jpg');">
                             <div class="slider-card__content">
                                 <span class="slider-card__num">03</span>
-                                <h3 class="slider-card__title">Astronaut VR</h3>
+                                <h3 class="slider-card__title" data-i18n="hero.card_title_2">Astronaut VR</h3>
                             </div>
                         </div>
                         <div class="slider-card" data-index="3" style="background-image: url('assets/students-jantar-mantar.jpg');">
                             <div class="slider-card__content">
                                 <span class="slider-card__num">04</span>
-                                <h3 class="slider-card__title">DIY Sundials</h3>
+                                <h3 class="slider-card__title" data-i18n="hero.card_title_3">DIY Sundials</h3>
                             </div>
                         </div>
                         <div class="slider-card" data-index="4" style="background-image: url('assets/planetary-weighing-kiosks.png');">
                             <div class="slider-card__content">
                                 <span class="slider-card__num">05</span>
-                                <h3 class="slider-card__title">Gravity Kiosks</h3>
+                                <h3 class="slider-card__title" data-i18n="hero.card_title_4">Gravity Kiosks</h3>
                             </div>
                         </div>
                         <div class="slider-card" data-index="5" style="background-image: url('assets/mahoba-rocketry-workshop.jpg');">
                             <div class="slider-card__content">
                                 <span class="slider-card__num">06</span>
-                                <h3 class="slider-card__title">Pop Rocketry</h3>
+                                <h3 class="slider-card__title" data-i18n="hero.card_title_5">Pop Rocketry</h3>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="hero__controls">
-                    <button class="hero__arrow" id="prev-arrow" aria-label="Previous Slide">
+                    <button class="hero__arrow" id="prev-arrow" aria-label="Previous Slide" data-i18n-aria-label="hero.prev_slide_aria">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
-                    <button class="hero__arrow" id="next-arrow" aria-label="Next Slide">
+                    <button class="hero__arrow" id="next-arrow" aria-label="Next Slide" data-i18n-aria-label="hero.next_slide_aria">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                     <div class="hero__progress-bar-container">
@@ -174,8 +191,8 @@
     <section class="exp-section section-padding" id="experiences">
         <div class="container">
             <div class="section-title-wrapper">
-                <span class="section-subtitle">Tactile & Immersive</span>
-                <h2 class="section-title">The Six Astrotourism Activities</h2>
+                <span class="section-subtitle" data-i18n="experiences.subtitle">Tactile & Immersive</span>
+                <h2 class="section-title" data-i18n="experiences.title">The Six Astrotourism Activities</h2>
             </div>
             
             <div class="exp-grid">
@@ -183,20 +200,20 @@
                 <!-- Experience 1: Astro Dome -->
                 <div class="exp-card" id="exp-detail-0">
                     <div>
-                        <span class="exp-card__num">01 / DOME EXPERIENCE</span>
+                        <span class="exp-card__num" data-i18n="experiences.card_num_0">01 / DOME EXPERIENCE</span>
                         <div class="exp-card__icon"><i class="fa-solid fa-circle-nodes"></i></div>
-                        <h3 class="exp-card__title">Digital Planetarium Shows</h3>
-                        <p class="exp-card__desc">A portable, climate-controlled, inflatable dome theater that utilizes advanced digital systems to project high-fidelity astronomical visuals onto a hemispherical screen. It provides students and tourists with an immersive journey through deep space, rendering stellar clusters, nebulae, and space exploration shows in Hindi and English.</p>
+                        <h3 class="exp-card__title" data-i18n="experiences.card_title_0">Digital Planetarium Shows</h3>
+                        <p class="exp-card__desc" data-i18n="experiences.card_desc_0">A portable, climate-controlled, inflatable dome theater that utilizes advanced digital systems to project high-fidelity astronomical visuals onto a hemispherical screen. It provides students and tourists with an immersive journey through deep space, rendering stellar clusters, nebulae, and space exploration shows in Hindi and English.</p>
                     </div>
                     <div class="exp-card__thumbnail-container">
                         <img src="assets/mahoba-planetarium.jpg" alt="Students entering the mobile planetarium dome" class="exp-card__img-thumbnail">
                     </div>
                     <div class="exp-card__b2b">
-                        <span class="exp-card__b2b-title">Department Integration Specs</span>
+                        <span class="exp-card__b2b-title" data-i18n="experiences.b2b_title_0">Department Integration Specs</span>
                         <ul class="exp-card__b2b-list">
-                            <li class="exp-card__b2b-item">Daily Capacity: <strong>1,000+ Students</strong></li>
-                            <li class="exp-card__b2b-item">Footprint Needed: <strong>30 x 30 ft (Flat Ground)</strong></li>
-                            <li class="exp-card__b2b-item">Power: <strong>5kW Constant Source</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_0_1">Daily Capacity: <strong>1,000+ Students</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_0_2">Footprint Needed: <strong>30 x 30 ft (Flat Ground)</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_0_3">Power: <strong>5kW Constant Source</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -204,20 +221,20 @@
                 <!-- Experience 2: Observations -->
                 <div class="exp-card" id="exp-detail-1">
                     <div>
-                        <span class="exp-card__num">02 / CELESTIAL OBSERVATION</span>
+                        <span class="exp-card__num" data-i18n="experiences.card_num_1">02 / CELESTIAL OBSERVATION</span>
                         <div class="exp-card__icon"><i class="fa-solid fa-sun"></i></div>
-                        <h3 class="exp-card__title">Planet & Solar Observations</h3>
-                        <p class="exp-card__desc">Safely observe our parent star in real-time through specialized refractors equipped with professional-grade Hydrogen-alpha and white-light solar filters during the day. After sunset, utilize computerized motorized GoTo tracking telescopes to resolve planetary rings, lunar craters, and deep-sky nebulae under dark skies.</p>
+                        <h3 class="exp-card__title" data-i18n="experiences.card_title_1">Planet & Solar Observations</h3>
+                        <p class="exp-card__desc" data-i18n="experiences.card_desc_1">Safely observe our parent star in real-time through specialized refractors equipped with professional-grade Hydrogen-alpha and white-light solar filters during the day. After sunset, utilize computerized motorized GoTo tracking telescopes to resolve planetary rings, lunar craters, and deep-sky nebulae under dark skies.</p>
                     </div>
                     <div class="exp-card__thumbnail-container">
                         <img src="assets/mahoba-night-observing.jpg" alt="Telescope night observations" class="exp-card__img-thumbnail">
                     </div>
                     <div class="exp-card__b2b">
-                        <span class="exp-card__b2b-title">Department Integration Specs</span>
+                        <span class="exp-card__b2b-title" data-i18n="experiences.b2b_title_1">Department Integration Specs</span>
                         <ul class="exp-card__b2b-list">
-                            <li class="exp-card__b2b-item">Hardware: <strong>2x Motorized & 1x Manual Telescopes</strong></li>
-                            <li class="exp-card__b2b-item">Solar Filters: <strong>Daytime H-Alpha & Binoculars</strong></li>
-                            <li class="exp-card__b2b-item">Nocturnal Views: <strong>Saturn, Jupiter, Moon</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_1_1">Hardware: <strong>2x Motorized & 1x Manual Telescopes</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_1_2">Solar Filters: <strong>Daytime H-Alpha & Binoculars</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_1_3">Nocturnal Views: <strong>Saturn, Jupiter, Moon</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -225,10 +242,10 @@
                 <!-- Experience 3: VR Space Flight -->
                 <div class="exp-card" id="exp-detail-2">
                     <div>
-                        <span class="exp-card__num">03 / SIMULATION ZONE</span>
+                        <span class="exp-card__num" data-i18n="experiences.card_num_2">03 / SIMULATION ZONE</span>
                         <div class="exp-card__icon"><i class="fa-solid fa-vr-cardboard"></i></div>
-                        <h3 class="exp-card__title">VR Space Walk Experience</h3>
-                        <p class="exp-card__desc">A high-fidelity virtual reality zone simulating space walks, orbital station tours, and rover missions. Using interactive 6-DOF headsets, visitors experience simulated zero-gravity orbits and lunar terrain traverses, bridging the gap between textbook theory and state-of-the-art public engagement.</p>
+                        <h3 class="exp-card__title" data-i18n="experiences.card_title_2">VR Space Walk Experience</h3>
+                        <p class="exp-card__desc" data-i18n="experiences.card_desc_2">A high-fidelity virtual reality zone simulating space walks, orbital station tours, and rover missions. Using interactive 6-DOF headsets, visitors experience simulated zero-gravity orbits and lunar terrain traverses, bridging the gap between textbook theory and state-of-the-art public engagement.</p>
                     </div>
                     <div class="exp-card__thumbnail-container">
                         <video class="exp-card__video" autoplay loop muted playsinline poster="assets/mahoba-dm-vr.jpg">
@@ -237,11 +254,11 @@
                         </video>
                     </div>
                     <div class="exp-card__b2b" style="margin-top: 1.5rem;">
-                        <span class="exp-card__b2b-title">Department Integration Specs</span>
+                        <span class="exp-card__b2b-title" data-i18n="experiences.b2b_title_2">Department Integration Specs</span>
                         <ul class="exp-card__b2b-list">
-                            <li class="exp-card__b2b-item">Equipment: <strong>2x VR Headset Stations</strong></li>
-                            <li class="exp-card__b2b-item">Simulation: <strong>ISS Astronaut Spacewalk</strong></li>
-                            <li class="exp-card__b2b-item">Throughput: <strong>20-30 users per hour</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_2_1">Equipment: <strong>2x VR Headset Stations</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_2_2">Simulation: <strong>ISS Astronaut Spacewalk</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_2_3">Throughput: <strong>20-30 users per hour</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -249,20 +266,20 @@
                 <!-- Experience 4: Workshop on Sundials -->
                 <div class="exp-card" id="exp-detail-3">
                     <div>
-                        <span class="exp-card__num">04 / ANCIENT TIMEKEEPING</span>
+                        <span class="exp-card__num" data-i18n="experiences.card_num_3">04 / ANCIENT TIMEKEEPING</span>
                         <div class="exp-card__icon"><i class="fa-solid fa-compass"></i></div>
-                        <h3 class="exp-card__title">Workshop on Sundials</h3>
-                        <p class="exp-card__desc">A hands-on workshop where participants construct functioning equatorial sundials. By aligning their sundial with local coordinates, students calculate solar time and analyze Earth's axial tilt, directly linking India's historical archeo-astronomy with modern astrophysics.</p>
+                        <h3 class="exp-card__title" data-i18n="experiences.card_title_3">Workshop on Sundials</h3>
+                        <p class="exp-card__desc" data-i18n="experiences.card_desc_3">A hands-on workshop where participants construct functioning equatorial sundials. By aligning their sundial with local coordinates, students calculate solar time and analyze Earth's axial tilt, directly linking India's historical archeo-astronomy with modern astrophysics.</p>
                     </div>
                     <div class="exp-card__thumbnail-container">
                         <img src="assets/students-jantar-mantar.jpg" alt="Students constructing sundials at Jantar Mantar" class="exp-card__img-thumbnail">
                     </div>
                     <div class="exp-card__b2b">
-                        <span class="exp-card__b2b-title">Department Integration Specs</span>
+                        <span class="exp-card__b2b-title" data-i18n="experiences.b2b_title_3">Department Integration Specs</span>
                         <ul class="exp-card__b2b-list">
-                            <li class="exp-card__b2b-item">Session Format: <strong>DIY Classroom & Families</strong></li>
-                            <li class="exp-card__b2b-item">Takeaway: <strong>Functional equatorial sundial kits</strong></li>
-                            <li class="exp-card__b2b-item">Focus Area: <strong>Solar orientation & Earth's geometry</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_3_1">Session Format: <strong>DIY Classroom & Families</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_3_2">Takeaway: <strong>Functional equatorial sundial kits</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_3_3">Focus Area: <strong>Solar orientation & Earth's geometry</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -270,20 +287,20 @@
                 <!-- Experience 5: Weigh Yourself Kiosks -->
                 <div class="exp-card" id="exp-detail-4">
                     <div>
-                        <span class="exp-card__num">05 / INTERACTIVE KIOSKS</span>
+                        <span class="exp-card__num" data-i18n="experiences.card_num_4">05 / INTERACTIVE KIOSKS</span>
                         <div class="exp-card__icon"><i class="fa-solid fa-scale-balanced"></i></div>
-                        <h3 class="exp-card__title">Gravity Kiosks</h3>
-                        <p class="exp-card__desc">Measure and compare user weight across different celestial bodies using electronic planetary weight scales. This interactive kiosk setup calculates real-time gravitational differences on Mars, Jupiter, the Moon, and other planets, teaching gravitational physics in a fun, tactile way.</p>
+                        <h3 class="exp-card__title" data-i18n="experiences.card_title_4">Gravity Kiosks</h3>
+                        <p class="exp-card__desc" data-i18n="experiences.card_desc_4">Measure and compare user weight across different celestial bodies using electronic planetary weight scales. This interactive kiosk setup calculates real-time gravitational differences on Mars, Jupiter, the Moon, and other planets, teaching gravitational physics in a fun, tactile way.</p>
                     </div>
                     <div class="exp-card__thumbnail-container">
                         <img src="assets/planetary-weighing-kiosks.png" alt="Weigh yourself kiosks booth" class="exp-card__img-thumbnail">
                     </div>
                     <div class="exp-card__b2b">
-                        <span class="exp-card__b2b-title">Department Integration Specs</span>
+                        <span class="exp-card__b2b-title" data-i18n="experiences.b2b_title_4">Department Integration Specs</span>
                         <ul class="exp-card__b2b-list">
-                            <li class="exp-card__b2b-item">Quantity: <strong>4 Digital Gravity Stations</strong></li>
-                            <li class="exp-card__b2b-item">Display: <strong>Digital planetary indicators</strong></li>
-                            <li class="exp-card__b2b-item">User Output: <strong>Gravitational coefficient prints</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_4_1">Quantity: <strong>4 Digital Gravity Stations</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_4_2">Display: <strong>Digital planetary indicators</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_4_3">User Output: <strong>Gravitational coefficient prints</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -291,20 +308,20 @@
                 <!-- Experience 6: Pop Rocket Demonstration -->
                 <div class="exp-card" id="exp-detail-5">
                     <div>
-                        <span class="exp-card__num">06 / AEROSPACE ZONE</span>
+                        <span class="exp-card__num" data-i18n="experiences.card_num_5">06 / AEROSPACE ZONE</span>
                         <div class="exp-card__icon"><i class="fa-solid fa-rocket"></i></div>
-                        <h3 class="exp-card__title">Pop Rocket Demonstration</h3>
-                        <p class="exp-card__desc">A hands-on aerospace engineering challenge using DIY soda pop rocket kits. Participants explore Newton's third law of motion by mixing safe chemical propellants to build up gas pressure, culminating in high-altitude vertical launches that illustrate launch dynamics and trajectory angles.</p>
+                        <h3 class="exp-card__title" data-i18n="experiences.card_title_5">Pop Rocket Demonstration</h3>
+                        <p class="exp-card__desc" data-i18n="experiences.card_desc_5">A hands-on aerospace engineering challenge using DIY soda pop rocket kits. Participants explore Newton's third law of motion by mixing safe chemical propellants to build up gas pressure, culminating in high-altitude vertical launches that illustrate launch dynamics and trajectory angles.</p>
                     </div>
                     <div class="exp-card__thumbnail-container">
                         <img src="assets/mahoba-rocketry-workshop.jpg" alt="Pop rocketry workshop demo" class="exp-card__img-thumbnail">
                     </div>
                     <div class="exp-card__b2b">
-                        <span class="exp-card__b2b-title">Department Integration Specs</span>
+                        <span class="exp-card__b2b-title" data-i18n="experiences.b2b_title_5">Department Integration Specs</span>
                         <ul class="exp-card__b2b-list">
-                            <li class="exp-card__b2b-item">Kits Provided: <strong>DIY soda pop rocket packs</strong></li>
-                            <li class="exp-card__b2b-item">Science Goal: <strong>Chemical reaction & propulsion physics</strong></li>
-                            <li class="exp-card__b2b-item">Safety Level: <strong>100% safe, non-toxic components</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_5_1">Kits Provided: <strong>DIY soda pop rocket packs</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_5_2">Science Goal: <strong>Chemical reaction & propulsion physics</strong></li>
+                            <li class="exp-card__b2b-item" data-i18n="experiences.b2b_item_5_3">Safety Level: <strong>100% safe, non-toxic components</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -321,35 +338,35 @@
                 <!-- Left Pitch points -->
                 <div class="pitch-content">
                     <div class="pitch-content__header">
-                        <span class="section-subtitle">Sovereign Partnership Rationale</span>
-                        <h2 class="pitch-content__tagline">Why Sponsoring Astrotourism Drives State Development</h2>
+                        <span class="section-subtitle" data-i18n="pitch.subtitle">Sovereign Partnership Rationale</span>
+                        <h2 class="pitch-content__tagline" data-i18n="pitch.title">Why Sponsoring Astrotourism Drives State Development</h2>
                     </div>
 
                     <div class="pitch-points">
                         <!-- Point 1 -->
                         <div class="pitch-point">
-                            <div class="pitch-point__num">01</div>
+                            <div class="pitch-point__num" data-i18n="pitch.point_num_1">01</div>
                             <div>
-                                <h3 class="pitch-point__title">Heritage Monument Night Activation</h3>
-                                <p class="pitch-point__desc">Historical forts, ancient sun temples, and heritage monuments are invaluable public assets. Sponsoring astrotourism campaigns allows tourism boards to safely activate these sites during post-sunset hours. Visitors engage in celestial observations against a historic architectural backdrop, extending visitor dwell time and creating local economic opportunities without requiring permanent structural modifications.</p>
+                                <h3 class="pitch-point__title" data-i18n="pitch.point_title_1">Heritage Monument Night Activation</h3>
+                                <p class="pitch-point__desc" data-i18n="pitch.point_desc_1">Historical forts, ancient sun temples, and heritage monuments are invaluable public assets. Sponsoring astrotourism campaigns allows tourism boards to safely activate these sites during post-sunset hours. Visitors engage in celestial observations against a historic architectural backdrop, extending visitor dwell time and creating local economic opportunities without requiring permanent structural modifications.</p>
                             </div>
                         </div>
                         
                         <!-- Point 2 -->
                         <div class="pitch-point">
-                            <div class="pitch-point__num">02</div>
+                            <div class="pitch-point__num" data-i18n="pitch.point_num_2">02</div>
                             <div>
-                                <h3 class="pitch-point__title">Sustainable Eco-Tourism (Dark Sky Preservation)</h3>
-                                <p class="pitch-point__desc">Astrotourism represents a sustainable, zero-impact infrastructure model. Sponsoring this initiative enables states to leverage natural dark skies in rural, forest, and desert regions as key assets. This attracts high-value, eco-conscious travelers, channeling revenue directly to homestays, local guides, and community operations without ecological disruption.</p>
+                                <h3 class="pitch-point__title" data-i18n="pitch.point_title_2">Sustainable Eco-Tourism (Dark Sky Preservation)</h3>
+                                <p class="pitch-point__desc" data-i18n="pitch.point_desc_2">Astrotourism represents a sustainable, zero-impact infrastructure model. Sponsoring this initiative enables states to leverage natural dark skies in rural, forest, and desert regions as key assets. This attracts high-value, eco-conscious travelers, channeling revenue directly to homestays, local guides, and community operations without ecological disruption.</p>
                             </div>
                         </div>
 
                         <!-- Point 3 -->
                         <div class="pitch-point">
-                            <div class="pitch-point__num">03</div>
+                            <div class="pitch-point__num" data-i18n="pitch.point_num_3">03</div>
                             <div>
-                                <h3 class="pitch-point__title">Youth STEM Empowerment & Skill Building</h3>
-                                <p class="pitch-point__desc">Aligning campaigns with regional educational programs brings high-quality scientific laboratories to rural schools. Local youth are trained in basic astronomy and telescope operations, equipping them to serve as local dark-sky tourism guides. This directly supports the constitutional goal of developing a scientific temper and creates new vocational pathways.</p>
+                                <h3 class="pitch-point__title" data-i18n="pitch.point_title_3">Youth STEM Empowerment & Skill Building</h3>
+                                <p class="pitch-point__desc" data-i18n="pitch.point_desc_3">Aligning campaigns with regional educational programs brings high-quality scientific laboratories to rural schools. Local youth are trained in basic astronomy and telescope operations, equipping them to serve as local dark-sky tourism guides. This directly supports the constitutional goal of developing a scientific temper and creates new vocational pathways.</p>
                             </div>
                         </div>
                     </div>
@@ -358,10 +375,10 @@
                 <!-- Right Pitch Visual -->
                 <div class="pitch-image-container">
                     <div class="pitch-image-frame">
-                        <img src="assets/deputy-cm-observing.jpg" alt="Hon'ble Deputy CM of Rajasthan, Ms. Diya Kumari, observing through a telescope" class="pitch-image" style="object-position: 50% 15%;">
+                        <img src="assets/deputy-cm-observing.jpg" alt="Hon'ble Deputy CM of Rajasthan, Ms. Diya Kumari, observing through a telescope" class="pitch-image" style="object-position: 50% 15%;" data-i18n-alt="pitch.image_alt">
                     </div>
                     <div style="margin-top: 1.5rem; text-align: center; font-style: italic; font-size: 0.95rem; color: var(--clr-text-muted); font-family: var(--ff-heading);">
-                        Hon'ble Deputy CM of Rajasthan, Ms. Diya Kumari, observing deep-sky targets.
+                        <span data-i18n="pitch.image_caption">Hon'ble Deputy CM of Rajasthan, Ms. Diya Kumari, observing deep-sky targets.</span>
                     </div>
                 </div>
 
@@ -373,14 +390,14 @@
     <section class="case-section section-padding" id="case-study">
         <div class="container case-container">
             <div class="section-title-wrapper" style="text-align: center; margin-bottom: 2.5rem;">
-                <span class="section-subtitle">Public Partnership Milestones</span>
-                <h2 class="section-title">Campaign Case Studies</h2>
+                <span class="section-subtitle" data-i18n="case.subtitle">Public Partnership Milestones</span>
+                <h2 class="section-title" data-i18n="case.title">Campaign Case Studies</h2>
             </div>
 
             <!-- Case Switcher Tabs -->
             <div class="case-tabs">
-                <button class="case-tab active" data-case="0">Hamirpur Mahotsav 2026</button>
-                <button class="case-tab" data-case="1">Mahoba Antariksh Darshan</button>
+                <button class="case-tab active" data-case="0" data-i18n="case.tab_0">Hamirpur Mahotsav 2026</button>
+                <button class="case-tab" data-case="1" data-i18n="case.tab_1">Mahoba Antariksh Darshan</button>
             </div>
 
             <div class="case-slides-container">
@@ -388,48 +405,48 @@
                 <div class="case-grid case-slide active" id="case-slide-0">
                     <!-- Left Sticky Meta -->
                     <div class="case-meta">
-                        <span class="case-meta__badge">Flagship Campaign</span>
-                        <h2 class="case-meta__title">Antariksh Darshan: Hamirpur</h2>
-                        <p class="case-meta__desc" style="font-size: 1.15rem; line-height: 1.6; color: var(--clr-text-dark-muted);">A landmark collaboration between the District Administration of Hamirpur and SPACE Group, establishing a dark-sky observatory at the Yamuna Bank to celebrate the district's annual festival.</p>
+                        <span class="case-meta__badge" data-i18n="case.badge_0">Flagship Campaign</span>
+                        <h2 class="case-meta__title" data-i18n="case.title_0">Antariksh Darshan: Hamirpur</h2>
+                        <p class="case-meta__desc" style="font-size: 1.15rem; line-height: 1.6; color: var(--clr-text-dark-muted);" data-i18n="case.desc_0">A landmark collaboration between the District Administration of Hamirpur and SPACE Group, establishing a dark-sky observatory at the Yamuna Bank to celebrate the district's annual festival.</p>
                         
                         <div class="case-meta__stats">
                             <div class="case-stat">
-                                <div class="case-stat__number">1,000+</div>
-                                <div class="case-stat__label">Students & Families Mobilized Daily</div>
+                                <div class="case-stat__number" data-i18n="case.stat_num_0_1">1,000+</div>
+                                <div class="case-stat__label" data-i18n="case.stat_label_0_1">Students & Families Mobilized Daily</div>
                             </div>
                             <div class="case-stat">
-                                <div class="case-stat__number">5 Days</div>
-                                <div class="case-stat__label">Yamuna Bank Site Activation</div>
+                                <div class="case-stat__number" data-i18n="case.stat_num_0_2">5 Days</div>
+                                <div class="case-stat__label" data-i18n="case.stat_label_0_2">Yamuna Bank Site Activation</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Right Story Content -->
                     <div class="case-content">
-                        <p>In March 2026, the District Administration of Hamirpur, under the visionary leadership of District Magistrate Shri Ghanshyam Meena (IAS), partnered with SPACE Group to organise an exclusive astrotourism pavilion titled <strong>'Antariksh Darshan'</strong>. The campaign served as the headline cultural and scientific anchor of the annual Hamirpur Mahotsav celebrations.</p>
+                        <p data-i18n="case.paragraph_0_1">In March 2026, the District Administration of Hamirpur, under the visionary leadership of District Magistrate Shri Ghanshyam Meena (IAS), partnered with SPACE Group to organise an exclusive astrotourism pavilion titled <strong>'Antariksh Darshan'</strong>. The campaign served as the headline cultural and scientific anchor of the annual Hamirpur Mahotsav celebrations.</p>
 
-                        <p>The chosen venue was the scenic Yamuna Bank in Hamirpur District, Uttar Pradesh. By setting up high-end computerized GoTo tracking telescopes and mobile planetarium domes, the campaign blended the natural beauty of the river banks with modern space science, offering local families and regional tourists an unprecedented night-sky experience.</p>
+                        <p data-i18n="case.paragraph_0_2">The chosen venue was the scenic Yamuna Bank in Hamirpur District, Uttar Pradesh. By setting up high-end computerized GoTo tracking telescopes and mobile planetarium domes, the campaign blended the natural beauty of the river banks with modern space science, offering local families and regional tourists an unprecedented night-sky experience.</p>
 
                         <div class="case-video-wrap" style="margin-bottom: 3rem; border: 1px solid rgba(27, 38, 79, 0.12); padding: 0.75rem; background-color: var(--clr-heritage-cream-dark); border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
                             <video controls poster="assets/hamirpur-dm-laser.jpg" style="width: 100%; border-radius: 2px; display: block; outline: none;">
                                 <source src="assets/hamirpur-event.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                            <div class="case-img-caption" style="margin-top: 0.75rem; font-weight: 600; font-size: 0.8rem; color: var(--clr-text-dark-muted); text-align: center;">
+                            <div class="case-img-caption" style="margin-top: 0.75rem; font-weight: 600; font-size: 0.8rem; color: var(--clr-text-dark-muted); text-align: center;" data-i18n="case.video_caption_0">
                                 Official Event Video: Antariksh Darshan Hamirpur Mahotsav Walkthrough
                             </div>
                         </div>
 
-                        <p>Beyond public stargazing, the campaign hosted structured workshops. Space tutors and astronomers guided visitors through planetary scales, solar filters, and pop rocket launches. This hands-on approach sparked a strong interest in STEM disciplines among the local youth, aligning perfectly with district-level educational and scientific outreach objectives.</p>
+                        <p data-i18n="case.paragraph_0_3">Beyond public stargazing, the campaign hosted structured workshops. Space tutors and astronomers guided visitors through planetary scales, solar filters, and pop rocket launches. This hands-on approach sparked a strong interest in STEM disciplines among the local youth, aligning perfectly with district-level educational and scientific outreach objectives.</p>
                         
                         <div class="case-images">
                             <div class="case-img-wrap">
                                 <img src="assets/hamirpur-dm-group.jpg" alt="DM Hamirpur Ghanshyam Meena, IAS, with the SPACE Group team">
-                                <div class="case-img-caption">District Magistrate Shri Ghanshyam Meena, IAS, with the SPACE Group team at the Yamuna Bank event site</div>
+                                <div class="case-img-caption" data-i18n="case.image_caption_0_1">District Magistrate Shri Ghanshyam Meena, IAS, with the SPACE Group team at the Yamuna Bank event site</div>
                             </div>
                             <div class="case-img-wrap">
                                 <img src="assets/hamirpur-dm-car-stars.png" alt="Hamirpur administrative vehicle under starry night">
-                                <div class="case-img-caption">Stunning long-exposure astrophotograph taken at the Yamuna Bank observatory grounds</div>
+                                <div class="case-img-caption" data-i18n="case.image_caption_0_2">Stunning long-exposure astrophotograph taken at the Yamuna Bank observatory grounds</div>
                             </div>
                         </div>
                     </div>
@@ -439,48 +456,48 @@
                 <div class="case-grid case-slide" id="case-slide-1">
                     <!-- Left Sticky Meta -->
                     <div class="case-meta">
-                        <span class="case-meta__badge">Heritage Site Campaign</span>
-                        <h2 class="case-meta__title">Antariksh Darshan: Mahoba</h2>
-                        <p class="case-meta__desc" style="font-size: 1.15rem; line-height: 1.6; color: var(--clr-text-dark-muted);">A strategic public-private partnership with the District Administration of Mahoba, activating the 9th-century Rahilya Sun Temple to blend architectural heritage with modern space science.</p>
+                        <span class="case-meta__badge" data-i18n="case.badge_1">Heritage Site Campaign</span>
+                        <h2 class="case-meta__title" data-i18n="case.title_1">Antariksh Darshan: Mahoba</h2>
+                        <p class="case-meta__desc" style="font-size: 1.15rem; line-height: 1.6; color: var(--clr-text-dark-muted);" data-i18n="case.desc_1">A strategic public-private partnership with the District Administration of Mahoba, activating the 9th-century Rahilya Sun Temple to blend architectural heritage with modern space science.</p>
                         
                         <div class="case-meta__stats">
                             <div class="case-stat">
-                                <div class="case-stat__number">900+</div>
-                                <div class="case-stat__label">Government School Students Sourced</div>
+                                <div class="case-stat__number" data-i18n="case.stat_num_1_1">900+</div>
+                                <div class="case-stat__label" data-i18n="case.stat_label_1_1">Government School Students Sourced</div>
                             </div>
                             <div class="case-stat">
-                                <div class="case-stat__number">10+</div>
-                                <div class="case-stat__label">Rural School Clusters Participating</div>
+                                <div class="case-stat__number" data-i18n="case.stat_num_1_2">10+</div>
+                                <div class="case-stat__label" data-i18n="case.stat_label_1_2">Rural School Clusters Participating</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Right Story Content -->
                     <div class="case-content">
-                        <p>In March 2026, to mark the district's Foundation Day, the District Administration of Mahoba, in strategic collaboration with Space India, launched <strong>'Antariksh Darshan Mahoba'</strong>. The initiative aimed to address two primary administrative objectives: revitalizing interest in local historical heritage and bringing high-quality science education to marginalized rural students in the Bundelkhand region.</p>
+                        <p data-i18n="case.paragraph_1_1">In March 2026, to mark the district's Foundation Day, the District Administration of Mahoba, in strategic collaboration with Space India, launched <strong>'Antariksh Darshan Mahoba'</strong>. The initiative aimed to address two primary administrative objectives: revitalizing interest in local historical heritage and bringing high-quality science education to marginalized rural students in the Bundelkhand region.</p>
 
-                        <p>The chosen venue was the historic 9th-century Rahilya Sun Temple, built by the Chandel rulers. This ancient stone structure, designed to track solar alignments, provided the perfect historical backdrop for a modern space-science campaign. The event successfully merged the architectural solar-timekeeping legacy of the past with the advanced telescopic observation of the present.</p>
+                        <p data-i18n="case.paragraph_1_2">The chosen venue was the historic 9th-century Rahilya Sun Temple, built by the Chandel rulers. This ancient stone structure, designed to track solar alignments, provided the perfect historical backdrop for a modern space-science campaign. The event successfully merged the architectural solar-timekeeping legacy of the past with the advanced telescopic observation of the present.</p>
 
                         <div class="case-video-wrap" style="margin-bottom: 3rem; border: 1px solid rgba(27, 38, 79, 0.12); padding: 0.75rem; background-color: var(--clr-heritage-cream-dark); border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
                             <video controls poster="assets/mahoba-planetarium.jpg" style="width: 100%; border-radius: 2px; display: block; outline: none;">
                                 <source src="assets/mahoba-antariksh-darshan.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                            <div class="case-img-caption" style="margin-top: 0.75rem; font-weight: 600; font-size: 0.8rem; color: var(--clr-text-dark-muted); text-align: center;">
+                            <div class="case-img-caption" style="margin-top: 0.75rem; font-weight: 600; font-size: 0.8rem; color: var(--clr-text-dark-muted); text-align: center;" data-i18n="case.video_caption_1">
                                 Official Event Video: Antariksh Darshan Mahoba Temple Stargazing
                             </div>
                         </div>
 
-                        <p>Selected government school students received special training in data analysis, participating directly in campaigns to discover near-Earth objects. The evening stargazing observation sessions opened to the general public, drawing local families, history enthusiasts, and travelers, creating a vibrant, family-friendly nocturnal community event around a previously unlit heritage site.</p>
+                        <p data-i18n="case.paragraph_1_3">Selected government school students received special training in data analysis, participating directly in campaigns to discover near-Earth objects. The evening stargazing observation sessions opened to the general public, drawing local families, history enthusiasts, and travelers, creating a vibrant, family-friendly nocturnal community event around a previously unlit heritage site.</p>
                         
                         <div class="case-images">
                             <div class="case-img-wrap">
                                 <img src="assets/mahoba-solar-glasses.jpg" alt="Students observing the sun with solar glasses in Mahoba">
-                                <div class="case-img-caption">Students conducting daytime solar observations at the Rahilya Sun Temple grounds</div>
+                                <div class="case-img-caption" data-i18n="case.image_caption_1_1">Students conducting daytime solar observations at the Rahilya Sun Temple grounds</div>
                             </div>
                             <div class="case-img-wrap">
                                 <img src="assets/mahoba-solar-telescope.jpg" alt="Solar telescope demonstration in Mahoba">
-                                <div class="case-img-caption">Space India tutors showing real-time solar flares to students using H-Alpha filters</div>
+                                <div class="case-img-caption" data-i18n="case.image_caption_1_2">Space India tutors showing real-time solar flares to students using H-Alpha filters</div>
                             </div>
                         </div>
                     </div>
@@ -494,74 +511,74 @@
     <section class="proposal-section section-padding" id="proposal-specs">
         <div class="container">
             <div class="section-title-wrapper">
-                <span class="section-subtitle">Financials & Logistics</span>
-                <h2 class="section-title" style="color: var(--clr-space-black);">Commercial Proposal & Support Requirements</h2>
+                <span class="section-subtitle" data-i18n="proposal.subtitle">Financials & Logistics</span>
+                <h2 class="section-title" style="color: var(--clr-space-black);" data-i18n="proposal.title">Commercial Proposal & Support Requirements</h2>
             </div>
             
             <div class="proposal-grid">
                 
                 <!-- Left Column: Commercial Budget (Option A: 5-Day Event) -->
                 <div>
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--clr-space-navy); font-family: var(--ff-body);">Official B2B Campaign Budget (5-Day Program)</h3>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--clr-space-navy); font-family: var(--ff-body);" data-i18n="proposal.table_header_budget">Official B2B Campaign Budget (5-Day Program)</h3>
                     <div class="proposal-table-wrapper">
                         <table class="proposal-table">
                             <thead>
                                 <tr>
-                                    <th>Cost Head</th>
-                                    <th>Description of Services</th>
-                                    <th>Cost (INR)</th>
+                                    <th data-i18n="proposal.th_head">Cost Head</th>
+                                    <th data-i18n="proposal.th_desc">Description of Services</th>
+                                    <th data-i18n="proposal.th_cost">Cost (INR)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Planetarium Shows</strong></td>
-                                    <td>6 Hours multiple shows daily (Hindi/English), Digital Mobile Planetarium Dome, PA & LED screen (1,000 Students capacity)</td>
-                                    <td>3,70,000</td>
+                                    <td data-i18n="proposal.row_head_1"><strong>Planetarium Shows</strong></td>
+                                    <td data-i18n="proposal.row_desc_1">6 Hours multiple shows daily (Hindi/English), Digital Mobile Planetarium Dome, PA & LED screen (1,000 Students capacity)</td>
+                                    <td data-i18n="proposal.row_cost_1">3,70,000</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Planet & Solar Observations</strong></td>
-                                    <td>Safe solar observations, sunspot viewing with solar filters, evening stargazing (Moon/planets) with 2 motorized and 1 manual telescopes</td>
-                                    <td>3,00,000</td>
+                                    <td data-i18n="proposal.row_head_2"><strong>Planet & Solar Observations</strong></td>
+                                    <td data-i18n="proposal.row_desc_2">Safe solar observations, sunspot viewing with solar filters, evening stargazing (Moon/planets) with 2 motorized and 1 manual telescopes</td>
+                                    <td data-i18n="proposal.row_cost_2">3,00,000</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>VR Experience Zone</strong></td>
-                                    <td>2 VR Headsets running immersive ISS spacewalk and astronaut simulations (1,000 Students throughput)</td>
-                                    <td>80,000</td>
+                                    <td data-i18n="proposal.row_head_3"><strong>VR Experience Zone</strong></td>
+                                    <td data-i18n="proposal.row_desc_3">2 VR Headsets running immersive ISS spacewalk and astronaut simulations (1,000 Students throughput)</td>
+                                    <td data-i18n="proposal.row_cost_3">80,000</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Workshop on Sundials</strong></td>
-                                    <td>DIY equatorial sundial making workshop, including all consumables, scientific templates, and participant takeaways</td>
-                                    <td>2,80,000</td>
+                                    <td data-i18n="proposal.row_head_4"><strong>Workshop on Sundials</strong></td>
+                                    <td data-i18n="proposal.row_desc_4">DIY equatorial sundial making workshop, including all consumables, scientific templates, and participant takeaways</td>
+                                    <td data-i18n="proposal.row_cost_4">2,80,000</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Weigh Yourself Kiosks</strong></td>
-                                    <td>4 electronic gravity kiosks allowing visitors to compare their weights on Mars, Jupiter, and other worlds</td>
-                                    <td>75,000</td>
+                                    <td data-i18n="proposal.row_head_5"><strong>Weigh Yourself Kiosks</strong></td>
+                                    <td data-i18n="proposal.row_desc_5">4 electronic gravity kiosks allowing visitors to compare their weights on Mars, Jupiter, and other worlds</td>
+                                    <td data-i18n="proposal.row_cost_5">75,000</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Pop Rocket Demonstration</strong></td>
-                                    <td>DIY chemical reaction soda pop rocket kits and launch pads for Newtonian mechanics demonstrations</td>
-                                    <td>31,500</td>
+                                    <td data-i18n="proposal.row_head_6"><strong>Pop Rocket Demonstration</strong></td>
+                                    <td data-i18n="proposal.row_desc_6">DIY chemical reaction soda pop rocket kits and launch pads for Newtonian mechanics demonstrations</td>
+                                    <td data-i18n="proposal.row_cost_6">31,500</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Logistics & Transport</strong></td>
-                                    <td>Technical equipment packaging, transportation, loading/unloading, toll charges, and transit insurance</td>
-                                    <td>50,000</td>
+                                    <td data-i18n="proposal.row_head_7"><strong>Logistics & Transport</strong></td>
+                                    <td data-i18n="proposal.row_desc_7">Technical equipment packaging, transportation, loading/unloading, toll charges, and transit insurance</td>
+                                    <td data-i18n="proposal.row_cost_7">50,000</td>
                                 </tr>
                                 <tr class="proposal-table__total">
-                                    <td><strong>SUB TOTAL</strong></td>
-                                    <td>Professional campaign execution cost (INR 2,27,300 per day equivalent)</td>
-                                    <td>11,86,500</td>
+                                    <td data-i18n="proposal.row_head_subtotal"><strong>SUB TOTAL</strong></td>
+                                    <td data-i18n="proposal.row_desc_subtotal">Professional campaign execution cost (INR 2,27,300 per day equivalent)</td>
+                                    <td data-i18n="proposal.row_cost_subtotal">11,86,500</td>
                                 </tr>
                                 <tr class="proposal-table__total" style="background-color: transparent; border-top: none;">
-                                    <td><strong>GST (18%)</strong></td>
-                                    <td>Statutory Integrated Goods and Services Tax</td>
-                                    <td>2,13,570</td>
+                                    <td data-i18n="proposal.row_head_gst"><strong>GST (18%)</strong></td>
+                                    <td data-i18n="proposal.row_desc_gst">Statutory Integrated Goods and Services Tax</td>
+                                    <td data-i18n="proposal.row_cost_gst">2,13,570</td>
                                 </tr>
                                 <tr class="proposal-table__total" style="background-color: rgba(247, 159, 53, 0.15); border-top: 2px solid var(--clr-heritage-gold); font-size: 1.1rem;">
-                                    <td><strong>GRAND TOTAL</strong></td>
-                                    <td><strong>Inclusive of all equipment, manpower, and taxes (For 5 Days)</strong></td>
-                                    <td><strong>14,00,070</strong></td>
+                                    <td data-i18n="proposal.row_head_grandtotal"><strong>GRAND TOTAL</strong></td>
+                                    <td data-i18n="proposal.row_desc_grandtotal"><strong>Inclusive of all equipment, manpower, and taxes (For 5 Days)</strong></td>
+                                    <td data-i18n="proposal.row_cost_grandtotal"><strong>14,00,070</strong></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -569,65 +586,65 @@
                     
                     <!-- Payment Terms Block -->
                     <div class="payment-terms-box" style="margin-top: 1.5rem; border: 1px solid rgba(27, 38, 79, 0.12); padding: 1.25rem 1.5rem; background-color: var(--clr-heritage-cream); border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
-                        <h4 style="font-family: var(--ff-body); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--clr-space-navy); text-transform: uppercase; letter-spacing: 0.05em;">Payment Terms</h4>
+                        <h4 style="font-family: var(--ff-body); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--clr-space-navy); text-transform: uppercase; letter-spacing: 0.05em;" data-i18n="proposal.payment_terms_title">Payment Terms</h4>
                         <ul style="list-style: none; padding-left: 0; display: grid; gap: 0.5rem; font-size: 0.85rem; color: var(--clr-text-dark-muted);">
-                            <li style="display: flex; gap: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--clr-heritage-gold); margin-top: 0.15rem;"></i> <strong>40% Advance</strong>&nbsp;– Paid upon order confirmation to initiate project mobilisation.</li>
-                            <li style="display: flex; gap: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--clr-heritage-gold); margin-top: 0.15rem;"></i> <strong>30% Milestone</strong>&nbsp;– Paid upon delivery of equipment, installation, and site setup.</li>
-                            <li style="display: flex; gap: 0.5rem;"><i class="fa-solid fa-circle-check" style="color: var(--clr-heritage-gold); margin-top: 0.15rem;"></i> <strong>30% Retainage</strong>&nbsp;– Paid within 7 days post-event completion.</li>
+                            <li style="display: flex; gap: 0.5rem;" data-i18n="proposal.payment_term_1"><i class="fa-solid fa-circle-check" style="color: var(--clr-heritage-gold); margin-top: 0.15rem;"></i> <strong>40% Advance</strong>&nbsp;– Paid upon order confirmation to initiate project mobilisation.</li>
+                            <li style="display: flex; gap: 0.5rem;" data-i18n="proposal.payment_term_2"><i class="fa-solid fa-circle-check" style="color: var(--clr-heritage-gold); margin-top: 0.15rem;"></i> <strong>30% Milestone</strong>&nbsp;– Paid upon delivery of equipment, installation, and site setup.</li>
+                            <li style="display: flex; gap: 0.5rem;" data-i18n="proposal.payment_term_3"><i class="fa-solid fa-circle-check" style="color: var(--clr-heritage-gold); margin-top: 0.15rem;"></i> <strong>30% Retainage</strong>&nbsp;– Paid within 7 days post-event completion.</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Right Column: Administrative Support Required -->
                 <div class="requirements-box">
-                    <h3 class="requirements-title">Support Requested from District Administration</h3>
+                    <h3 class="requirements-title" data-i18n="proposal.requirements_title">Support Requested from District Administration</h3>
                     <ul class="requirements-list">
                         <!-- Requirement 1 -->
                         <li class="requirement-item">
                             <div class="requirement-item__icon"><i class="fa-solid fa-map-location-dot"></i></div>
                             <div>
-                                <h4 class="requirement-item__title">Venue & Permissions</h4>
-                                <p class="requirement-item__desc">Free access permissions for the SPACE team to setup stargazing equipment and mobile domes at high-visibility venues (e.g. Yamuna Bank, heritage monuments).</p>
+                                <h4 class="requirement-item__title" data-i18n="proposal.req_head_1">Venue & Permissions</h4>
+                                <p class="requirement-item__desc" data-i18n="proposal.req_desc_1">Free access permissions for the SPACE team to setup stargazing equipment and mobile domes at high-visibility venues (e.g. Yamuna Bank, heritage monuments).</p>
                             </div>
                         </li>
                         <!-- Requirement 2 -->
                         <li class="requirement-item">
                             <div class="requirement-item__icon"><i class="fa-solid fa-bolt"></i></div>
                             <div>
-                                <h4 class="requirement-item__title">Continuous Power Supply</h4>
-                                <p class="requirement-item__desc">Provision of stable electricity connection (5kW constant load) or silent generator backup for the planetarium projector, blower systems, and VR zone.</p>
+                                <h4 class="requirement-item__title" data-i18n="proposal.req_head_2">Continuous Power Supply</h4>
+                                <p class="requirement-item__desc" data-i18n="proposal.req_desc_2">Provision of stable electricity connection (5kW constant load) or silent generator backup for the planetarium projector, blower systems, and VR zone.</p>
                             </div>
                         </li>
                         <!-- Requirement 3 -->
                         <li class="requirement-item">
                             <div class="requirement-item__icon"><i class="fa-solid fa-shield-halved"></i></div>
                             <div>
-                                <h4 class="requirement-item__title">Security Personnel</h4>
-                                <p class="requirement-item__desc">Security deployment to manage student crowd flows, set up queue barricades, and provide overnight protection for sensitive telescope gear.</p>
+                                <h4 class="requirement-item__title" data-i18n="proposal.req_head_3">Security Personnel</h4>
+                                <p class="requirement-item__desc" data-i18n="proposal.req_desc_3">Security deployment to manage student crowd flows, set up queue barricades, and provide overnight protection for sensitive telescope gear.</p>
                             </div>
                         </li>
                         <!-- Requirement 4 -->
                         <li class="requirement-item">
                             <div class="requirement-item__icon"><i class="fa-solid fa-hotel"></i></div>
                             <div>
-                                <h4 class="requirement-item__title">Stay & Local Transport</h4>
-                                <p class="requirement-item__desc">Provision of local accommodation/boarding for the SPACE team of 6, plus vehicle clearance for loading and unloading equipment.</p>
+                                <h4 class="requirement-item__title" data-i18n="proposal.req_head_4">Stay & Local Transport</h4>
+                                <p class="requirement-item__desc" data-i18n="proposal.req_desc_4">Provision of local accommodation/boarding for the SPACE team of 6, plus vehicle clearance for loading and unloading equipment.</p>
                             </div>
                         </li>
                         <!-- Requirement 5 -->
                         <li class="requirement-item">
                             <div class="requirement-item__icon"><i class="fa-solid fa-faucet-drip"></i></div>
                             <div>
-                                <h4 class="requirement-item__title">Water & Sanitation</h4>
-                                <p class="requirement-item__desc">Ensuring clean drinking water stations and temporary/public toilets are available at the site for visiting student batches and tourists.</p>
+                                <h4 class="requirement-item__title" data-i18n="proposal.req_head_5">Water & Sanitation</h4>
+                                <p class="requirement-item__desc" data-i18n="proposal.req_desc_5">Ensuring clean drinking water stations and temporary/public toilets are available at the site for visiting student batches and tourists.</p>
                             </div>
                         </li>
                         <!-- Requirement 6 -->
                         <li class="requirement-item">
                             <div class="requirement-item__icon"><i class="fa-solid fa-binoculars"></i></div>
                             <div>
-                                <h4 class="requirement-item__title">Reconnaissance Survey</h4>
-                                <p class="requirement-item__desc">Advance access for the SPACE engineering team to inspect layout dimensions, ambient light levels, and power lines prior to the main campaign.</p>
+                                <h4 class="requirement-item__title" data-i18n="proposal.req_head_6">Reconnaissance Survey</h4>
+                                <p class="requirement-item__desc" data-i18n="proposal.req_desc_6">Advance access for the SPACE engineering team to inspect layout dimensions, ambient light levels, and power lines prior to the main campaign.</p>
                             </div>
                         </li>
                     </ul>
@@ -641,8 +658,8 @@
     <section class="gallery-section section-padding" id="gallery">
         <div class="container">
             <div class="section-title-wrapper">
-                <span class="section-subtitle">Real Impact Visuals</span>
-                <h2 class="section-title">Campaign Gallery</h2>
+                <span class="section-subtitle" data-i18n="gallery.subtitle">Real Impact Visuals</span>
+                <h2 class="section-title" data-i18n="gallery.title">Campaign Gallery</h2>
             </div>
             
             <div class="gallery-grid">
@@ -650,8 +667,8 @@
                     <img src="assets/moon-at-taj.jpg" alt="Full Moon rising behind Taj Mahal dome">
                     <div class="gallery-item__overlay">
                         <div>
-                            <h4 class="gallery-item__title">Astrotourism at Taj Mahal</h4>
-                            <span class="gallery-item__loc">Agra, Uttar Pradesh</span>
+                            <h4 class="gallery-item__title" data-i18n="gallery.item_title_0">Astrotourism at Taj Mahal</h4>
+                            <span class="gallery-item__loc" data-i18n="gallery.item_loc_0">Agra, Uttar Pradesh</span>
                         </div>
                     </div>
                 </div>
@@ -659,8 +676,8 @@
                     <img src="assets/neelkanth-temple-night.jpg" alt="Stargazing night sky at Neelkanth Temple">
                     <div class="gallery-item__overlay">
                         <div>
-                            <h4 class="gallery-item__title">Celestial Heritage Nights</h4>
-                            <span class="gallery-item__loc">Neelkanth Temple, Alwar</span>
+                            <h4 class="gallery-item__title" data-i18n="gallery.item_title_1">Celestial Heritage Nights</h4>
+                            <span class="gallery-item__loc" data-i18n="gallery.item_loc_1">Neelkanth Temple, Alwar</span>
                         </div>
                     </div>
                 </div>
@@ -668,8 +685,8 @@
                     <img src="assets/shanti-stupa-night.jpg" alt="Milky Way over Shanti Stupa Ladakh">
                     <div class="gallery-item__overlay">
                         <div>
-                            <h4 class="gallery-item__title">Dark Sky Watch at Shanti Stupa</h4>
-                            <span class="gallery-item__loc">Leh, Ladakh</span>
+                            <h4 class="gallery-item__title" data-i18n="gallery.item_title_2">Dark Sky Watch at Shanti Stupa</h4>
+                            <span class="gallery-item__loc" data-i18n="gallery.item_loc_2">Leh, Ladakh</span>
                         </div>
                     </div>
                 </div>
@@ -677,8 +694,8 @@
                     <img src="assets/red-fort-night.jpg" alt="Public stargazing outreach at the Red Fort">
                     <div class="gallery-item__overlay">
                         <div>
-                            <h4 class="gallery-item__title">Stargazing Outreach at the Red Fort</h4>
-                            <span class="gallery-item__loc">The Red Fort, New Delhi</span>
+                            <h4 class="gallery-item__title" data-i18n="gallery.item_title_3">Stargazing Outreach at the Red Fort</h4>
+                            <span class="gallery-item__loc" data-i18n="gallery.item_loc_3">The Red Fort, New Delhi</span>
                         </div>
                     </div>
                 </div>
@@ -686,8 +703,8 @@
                     <img src="assets/minister-inauguration.jpg" alt="Hon'ble Union Minister Shri Arjun Ram Meghwal inaugurating space event">
                     <div class="gallery-item__overlay">
                         <div>
-                            <h4 class="gallery-item__title">National Campaign Launch</h4>
-                            <span class="gallery-item__loc">Hon'ble Union Minister Shri Arjun Ram Meghwal</span>
+                            <h4 class="gallery-item__title" data-i18n="gallery.item_title_4">National Campaign Launch</h4>
+                            <span class="gallery-item__loc" data-i18n="gallery.item_loc_4">Hon'ble Union Minister Shri Arjun Ram Meghwal</span>
                         </div>
                     </div>
                 </div>
@@ -695,8 +712,8 @@
                     <img src="assets/qutub-star-trails.jpg" alt="Star trails around Qutub Minar at night">
                     <div class="gallery-item__overlay">
                         <div>
-                            <h4 class="gallery-item__title">Star Trails Around Qutub Minar</h4>
-                            <span class="gallery-item__loc">Qutub Minar, New Delhi</span>
+                            <h4 class="gallery-item__title" data-i18n="gallery.item_title_5">Star Trails Around Qutub Minar</h4>
+                            <span class="gallery-item__loc" data-i18n="gallery.item_loc_5">Qutub Minar, New Delhi</span>
                         </div>
                     </div>
                 </div>
@@ -711,40 +728,40 @@
                 <!-- Testimonial 1 -->
                 <div class="test-slide active" data-index="0">
                     <div class="test-slide__quote-icon">“</div>
-                    <p class="test-slide__text">Integrating astronomy workshops and night stargazing on the banks of the Yamuna River during the Hamirpur Mahotsav was a resounding success. The SPACE Group team did an outstanding job setting up mobile digital planetariums and high-end telescopes that drew thousands of students, families, and tourists. This initiative has unlocked a new dimension of science education and dark-sky heritage in our district.</p>
+                    <p class="test-slide__text" data-i18n="testimonials.slide_text_0">Integrating astronomy workshops and night stargazing on the banks of the Yamuna River during the Hamirpur Mahotsav was a resounding success. The SPACE Group team did an outstanding job setting up mobile digital planetariums and high-end telescopes that drew thousands of students, families, and tourists. This initiative has unlocked a new dimension of science education and dark-sky heritage in our district.</p>
                     <div class="test-slide__author">
-                        <span class="test-slide__name">Shri Ghanshyam Meena, IAS</span>
-                        <span class="test-slide__role">District Magistrate, Hamirpur (Uttar Pradesh)</span>
+                        <span class="test-slide__name" data-i18n="testimonials.slide_author_0">Shri Ghanshyam Meena, IAS</span>
+                        <span class="test-slide__role" data-i18n="testimonials.slide_role_0">District Magistrate, Hamirpur (Uttar Pradesh)</span>
                     </div>
                 </div>
 
                 <!-- Testimonial 2 -->
                 <div class="test-slide" data-index="1">
                     <div class="test-slide__quote-icon">“</div>
-                    <p class="test-slide__text">Our collaboration with Space India for 'Antariksh Darshan' at the Rahilya Sun Temple successfully connected Bundelkhand's historical heritage with modern scientific exploration. Watching over 900 of our government school students interact with professional astronomical equipment and participate in asteroid search campaigns was a milestone for our district's educational outreach. This initiative demonstrates how public-private partnerships can enrich local tourism while democratizing science.</p>
+                    <p class="test-slide__text" data-i18n="testimonials.slide_text_1">Our collaboration with Space India for 'Antariksh Darshan' at the Rahilya Sun Temple successfully connected Bundelkhand's historical heritage with modern scientific exploration. Watching over 900 of our government school students interact with professional astronomical equipment and participate in asteroid search campaigns was a milestone for our district's educational outreach. This initiative demonstrates how public-private partnerships can enrich local tourism while democratizing science.</p>
                     <div class="test-slide__author">
-                        <span class="test-slide__name">Ms. Ghazal Bhardwaj, IAS</span>
-                        <span class="test-slide__role">District Magistrate, Mahoba (Uttar Pradesh)</span>
+                        <span class="test-slide__name" data-i18n="testimonials.slide_author_1">Ms. Ghazal Bhardwaj, IAS</span>
+                        <span class="test-slide__role" data-i18n="testimonials.slide_role_1">District Magistrate, Mahoba (Uttar Pradesh)</span>
                     </div>
                 </div>
 
                 <!-- Testimonial 3 -->
                 <div class="test-slide" data-index="2">
                     <div class="test-slide__quote-icon">“</div>
-                    <p class="test-slide__text">Astrotourism represents the frontier of sustainable tourism in India. The 'Antariksh Darshan' model demonstrates that we do not require invasive concrete infrastructure to attract travelers; we only need to preserve and celebrate our dark skies. By linking astronomical observation with our heritage monuments, we create a high-value, zero-impact night tourism model that directly supports local homestays and rural communities.</p>
+                    <p class="test-slide__text" data-i18n="testimonials.slide_text_2">Astrotourism represents the frontier of sustainable tourism in India. The 'Antariksh Darshan' model demonstrates that we do not require invasive concrete infrastructure to attract travelers; we only need to preserve and celebrate our dark skies. By linking astronomical observation with our heritage monuments, we create a high-value, zero-impact night tourism model that directly supports local homestays and rural communities.</p>
                     <div class="test-slide__author">
-                        <span class="test-slide__name">Dr. Ananya Roy</span>
-                        <span class="test-slide__role">Senior Strategic Advisor, State Tourism Development Corporation</span>
+                        <span class="test-slide__name" data-i18n="testimonials.slide_author_2">Dr. Ananya Roy</span>
+                        <span class="test-slide__role" data-i18n="testimonials.slide_role_2">Senior Strategic Advisor, State Tourism Development Corporation</span>
                     </div>
                 </div>
 
                 <!-- Testimonial 4 -->
                 <div class="test-slide" data-index="3">
                     <div class="test-slide__quote-icon">“</div>
-                    <p class="test-slide__text">For our students in rural schools, astronomy was previously confined to illustrations in textbooks. The mobile planetarium and hands-on rocketry workshops transformed that learning experience. The excitement in their eyes when they observed the rings of Saturn through a telescope was invaluable, igniting a curiosity that will guide their academic pathways for years to come.</p>
+                    <p class="test-slide__text" data-i18n="testimonials.slide_text_3">For our students in rural schools, astronomy was previously confined to illustrations in textbooks. The mobile planetarium and hands-on rocketry workshops transformed that learning experience. The excitement in their eyes when they observed the rings of Saturn through a telescope was invaluable, igniting a curiosity that will guide their academic pathways for years to come.</p>
                     <div class="test-slide__author">
-                        <span class="test-slide__name">Mr. R. K. Dwivedi</span>
-                        <span class="test-slide__role">Principal, Government Inter College, Mahoba</span>
+                        <span class="test-slide__name" data-i18n="testimonials.slide_author_3">Mr. R. K. Dwivedi</span>
+                        <span class="test-slide__role" data-i18n="testimonials.slide_role_3">Principal, Government Inter College, Mahoba</span>
                     </div>
                 </div>
 
@@ -767,31 +784,31 @@
                 <!-- Left Contact Info -->
                 <div class="contact-info">
                     <div class="contact-info__header">
-                        <span class="section-subtitle">Request Proposal</span>
-                        <h2 class="contact-info__title">Partner With Space India</h2>
+                        <span class="section-subtitle" data-i18n="contact.subtitle">Request Proposal</span>
+                        <h2 class="contact-info__title" data-i18n="contact.title">Partner With Space India</h2>
                     </div>
-                    <p class="contact-info__text">Bring Antariksh Darshan to your state monuments or school clusters. Submit this inquiry, and a senior coordinator from our public-private engagement desk will contact you to schedule a briefing.</p>
+                    <p class="contact-info__text" data-i18n="contact.text">Bring Antariksh Darshan to your state monuments or school clusters. Submit this inquiry, and a senior coordinator from our public-private engagement desk will contact you to schedule a briefing.</p>
                     
                     <div class="contact-details">
                         <div class="contact-detail">
                             <div class="contact-detail__icon"><i class="fa-solid fa-envelope"></i></div>
                             <div>
-                                <div class="contact-detail__label">Official Inquiries</div>
+                                <div class="contact-detail__label" data-i18n="contact.label_email">Official Inquiries</div>
                                 <div class="contact-detail__value"><a href="mailto:getintouch@space-india.com">getintouch@space-india.com</a></div>
                             </div>
                         </div>
                         <div class="contact-detail">
                             <div class="contact-detail__icon"><i class="fa-solid fa-phone"></i></div>
                             <div>
-                                <div class="contact-detail__label">Public-Private Desk</div>
+                                <div class="contact-detail__label" data-i18n="contact.label_phone">Public-Private Desk</div>
                                 <div class="contact-detail__value">+91 92126 69953</div>
                             </div>
                         </div>
                         <div class="contact-detail">
                             <div class="contact-detail__icon"><i class="fa-solid fa-location-dot"></i></div>
                             <div>
-                                <div class="contact-detail__label">Headquarters</div>
-                                <div class="contact-detail__value">Space Technology and Education Pvt. Ltd.<br>New Delhi, India</div>
+                                <div class="contact-detail__label" data-i18n="contact.label_hq">Headquarters</div>
+                                <div class="contact-detail__value" data-i18n="contact.value_hq">Space Technology and Education Pvt. Ltd.<br>New Delhi, India</div>
                             </div>
                         </div>
                     </div>
@@ -807,39 +824,39 @@
                         <input type="hidden" name="_captcha" value="false">
                         <div class="form-group-row">
                             <div class="form-group">
-                                <label class="form-label" for="official-name">Full Name *</label>
-                                <input class="form-input" type="text" id="official-name" name="name" placeholder="Your Full Name" required>
+                                <label class="form-label" for="official-name" data-i18n="contact.form_label_name">Full Name *</label>
+                                <input class="form-input" type="text" id="official-name" name="name" placeholder="Your Full Name" data-i18n-placeholder="contact.form_placeholder_name" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="agency-name">Organisation / Agency Name *</label>
-                                <input class="form-input" type="text" id="agency-name" name="organisation" placeholder="e.g. Department of Tourism, School Cluster, CSR Cell" required>
+                                <label class="form-label" for="agency-name" data-i18n="contact.form_label_org">Organisation / Agency Name *</label>
+                                <input class="form-input" type="text" id="agency-name" name="organisation" placeholder="e.g. Department of Tourism, School Cluster, CSR Cell" data-i18n-placeholder="contact.form_placeholder_org" required>
                             </div>
                         </div>
 
                         <div class="form-group-row">
                             <div class="form-group">
-                                <label class="form-label" for="official-email">Email Address *</label>
-                                <input class="form-input" type="email" id="official-email" name="email" placeholder="email@example.com" required>
+                                <label class="form-label" for="official-email" data-i18n="contact.form_label_email">Email Address *</label>
+                                <input class="form-input" type="email" id="official-email" name="email" placeholder="email@example.com" data-i18n-placeholder="contact.form_placeholder_email" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="official-phone">Contact Number *</label>
-                                <input class="form-input" type="tel" id="official-phone" name="phone" placeholder="10-digit phone number" required>
+                                <label class="form-label" for="official-phone" data-i18n="contact.form_label_phone">Contact Number *</label>
+                                <input class="form-input" type="tel" id="official-phone" name="phone" placeholder="10-digit phone number" data-i18n-placeholder="contact.form_placeholder_phone" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="official-location">Location / Venue *</label>
-                            <input class="form-input" type="text" id="official-location" name="location" placeholder="e.g. Jaipur, Rajasthan or School Campus, Delhi" required>
+                            <label class="form-label" for="official-location" data-i18n="contact.form_label_location">Location / Venue *</label>
+                            <input class="form-input" type="text" id="official-location" name="location" placeholder="e.g. Jaipur, Rajasthan or School Campus, Delhi" data-i18n-placeholder="contact.form_placeholder_location" required>
                         </div>
 
-                        <button class="btn btn--primary form-submit-btn" type="submit">Submit Partnership Inquiry</button>
+                        <button class="btn btn--primary form-submit-btn" type="submit" data-i18n="contact.form_submit_btn">Submit Partnership Inquiry</button>
                     </form>
                     
                     <div class="form-success-msg" id="rfp-form-success">
                         <i class="fa-solid fa-circle-check" style="font-size: 3rem; color: var(--clr-heritage-gold); margin-bottom: 1.5rem; display: block;"></i>
-                        <h3>Thank You for Your Inquiry</h3>
-                        <p style="margin-top: 0.75rem; font-weight: normal; color: var(--clr-text-muted);">Your partnership inquiry has been received by our Public-Private Partnership Desk. A senior coordinator will contact you within 24 business hours.</p>
-                        <a href="https://space-india.com" target="_blank" class="btn btn--outline" style="margin-top: 2rem; width: 100%;">Return to Space India</a>
+                        <h3 data-i18n="contact.success_title">Thank You for Your Inquiry</h3>
+                        <p style="margin-top: 0.75rem; font-weight: normal; color: var(--clr-text-muted);" data-i18n="contact.success_text">Your partnership inquiry has been received by our Public-Private Partnership Desk. A senior coordinator will contact you within 24 business hours.</p>
+                        <a href="https://space-india.com" target="_blank" class="btn btn--outline" style="margin-top: 2rem; width: 100%;" data-i18n="contact.success_return_btn">Return to Space India</a>
                     </div>
                 </div>
 
@@ -859,29 +876,29 @@
                         <div class="logo-divider" style="background-color: rgba(255,255,255,0.1); height: 25px;"></div>
                         <img src="assets/logo-astro-tourism.png" alt="Astro Tourism Badge" class="footer-logo-img">
                     </div>
-                    <p class="footer-brand__desc">Space Technology and Education Pvt. Ltd. (Space India) is the leading organization in astronomy education, space science workshops, and public astrotourism programs across school networks and public sectors.</p>
+                    <p class="footer-brand__desc" data-i18n="footer.brand_desc">Space Technology and Education Pvt. Ltd. (Space India) is the leading organization in astronomy education, space science workshops, and public astrotourism programs across school networks and public sectors.</p>
                 </div>
 
                 <!-- Col 2 Navigation -->
                 <div class="footer-links">
-                    <h4 class="footer-links__title">Campaign Directory</h4>
+                    <h4 class="footer-links__title" data-i18n="footer.links_title">Campaign Directory</h4>
                     <ul class="footer-links__list">
-                        <li><a href="#hero" class="footer-links__link">Experiences Overview</a></li>
-                        <li><a href="#experiences" class="footer-links__link">Operational Specs</a></li>
-                        <li><a href="#benefits" class="footer-links__link">Strategic Rationale</a></li>
-                        <li><a href="#case-study" class="footer-links__link">Hamirpur Campaign</a></li>
-                        <li><a href="#proposal-specs" class="footer-links__link">Commercial Proposal</a></li>
-                        <li><a href="#gallery" class="footer-links__link">Media Gallery</a></li>
-                        <li><a href="#connect" class="footer-links__link">Partnership Desk</a></li>
+                        <li><a href="#hero" class="footer-links__link" data-i18n="footer.link_0">Experiences Overview</a></li>
+                        <li><a href="#experiences" class="footer-links__link" data-i18n="footer.link_1">Operational Specs</a></li>
+                        <li><a href="#benefits" class="footer-links__link" data-i18n="footer.link_2">Strategic Rationale</a></li>
+                        <li><a href="#case-study" class="footer-links__link" data-i18n="footer.link_3">Hamirpur Campaign</a></li>
+                        <li><a href="#proposal-specs" class="footer-links__link" data-i18n="footer.link_4">Commercial Proposal</a></li>
+                        <li><a href="#gallery" class="footer-links__link" data-i18n="footer.link_5">Media Gallery</a></li>
+                        <li><a href="#connect" class="footer-links__link" data-i18n="footer.link_6">Partnership Desk</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 3 Contacts -->
                 <div class="footer-contact">
-                    <h4 class="footer-contact__title">Partnership Contact</h4>
-                    <p class="footer-contact__item"><strong>Email:</strong> <a href="mailto:getintouch@space-india.com" style="color: var(--clr-text-muted);">getintouch@space-india.com</a></p>
-                    <p class="footer-contact__item"><strong>Phone:</strong> +91 92126 69953</p>
-                    <p class="footer-contact__item"><strong>Address:</strong> Space Technology and Education Pvt. Ltd., New Delhi, India</p>
+                    <h4 class="footer-contact__title" data-i18n="footer.contact_title">Partnership Contact</h4>
+                    <p class="footer-contact__item"><strong data-i18n="footer.contact_email_label">Email:</strong> <a href="mailto:getintouch@space-india.com" style="color: var(--clr-text-muted);">getintouch@space-india.com</a></p>
+                    <p class="footer-contact__item"><strong data-i18n="footer.contact_phone_label">Phone:</strong> +91 92126 69953</p>
+                    <p class="footer-contact__item"><strong data-i18n="footer.contact_address_label">Address:</strong> <span data-i18n="footer.contact_address_value">Space Technology and Education Pvt. Ltd., New Delhi, India</span></p>
                     
                     <div class="footer-socials">
                         <a href="https://www.facebook.com/SPACEIndiaEdu" target="_blank" class="footer-social-link"><i class="fa-brands fa-facebook-f"></i></a>
@@ -894,13 +911,14 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 Space Technology and Education Pvt. Ltd. (Space India). All rights reserved.</p>
-                <p>Designed for public-private partnerships in astrotourism.</p>
+                <p data-i18n="footer.copyright">&copy; 2026 Space Technology and Education Pvt. Ltd. (Space India). All rights reserved.</p>
+                <p data-i18n="footer.subtitle">Designed for public-private partnerships in astrotourism.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="translations.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

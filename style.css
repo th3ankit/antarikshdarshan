@@ -140,6 +140,13 @@ img {
     text-transform: uppercase;
     transition: all var(--tr-fast);
     border-radius: 4px;
+    min-height: 48px; /* WCAG touch-target baseline */
+}
+
+.btn--sm {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.8rem;
+    min-height: 38px;
 }
 
 .btn--primary {
@@ -1468,9 +1475,39 @@ textarea.form-input {
 
 .event-banner-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    gap: 1.5rem;
+}
+
+.event-banner-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--clr-text-light);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.5px;
+    max-width: 800px;
+    line-height: 1.4;
+    background: linear-gradient(135deg, #ffffff 40%, var(--clr-heritage-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .event-banner-title {
+        font-size: 1.4rem;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-banner-title {
+        font-size: 1.15rem;
+    }
 }
 
 .event-banner-img {
@@ -1522,6 +1559,24 @@ textarea.form-input {
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
+    /* Mobile header logo sizing prevents wrapping */
+    .logo-space-india {
+        height: 36px;
+    }
+    .logo-astro-tourism {
+        height: 40px;
+    }
+    .header__logos {
+        gap: 0.75rem;
+    }
+    .logo-divider {
+        height: 20px;
+    }
+
+    .hero__glow {
+        background: linear-gradient(to bottom, rgba(5, 10, 24, 0.7) 0%, rgba(5, 10, 24, 0.95) 100%);
+    }
+
     .hero {
         height: auto;
         min-height: 100vh;
@@ -1568,23 +1623,14 @@ textarea.form-input {
 
     .hero__description-container {
         height: auto;
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
     }
-    
-    .exp-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-    
-    .exp-card__thumbnail-container {
-        height: 380px;
-    }
-    
+
 
     
     .pitch-grid {
         grid-template-columns: 1fr;
-        gap: 4rem;
+        gap: 3rem;
     }
     
     .case-grid {
@@ -1604,6 +1650,36 @@ textarea.form-input {
     
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    /* Tablet Gallery Grid (2-column asymmetric) */
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 220px;
+    }
+    .gallery-item:nth-child(1) {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+    .gallery-item:nth-child(2) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .gallery-item:nth-child(3) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .gallery-item:nth-child(4) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .gallery-item:nth-child(5) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .gallery-item:nth-child(6) {
+        grid-column: span 2;
+        grid-row: span 1;
     }
 
     /* Mobile navigation overlay triggered at 1024px */
@@ -1638,30 +1714,22 @@ textarea.form-input {
 
     .header__link {
         display: block;
-        padding: 0.75rem 2rem;
+        padding: 0.95rem 2rem;
         width: 100%;
         text-align: center;
         font-size: 1.15rem;
+    }
+
+    .header__nav .btn {
+        width: 80%;
+        margin: 1rem auto 0 auto;
+        min-height: 48px;
     }
 }
 
 @media (max-width: 768px) {
     html {
         font-size: 16px; /* Retain baseline readability */
-    }
-    
-    /* Mobile header logo sizing prevents wrapping */
-    .logo-space-india {
-        height: 36px;
-    }
-    .logo-astro-tourism {
-        height: 40px;
-    }
-    .header__logos {
-        gap: 0.75rem;
-    }
-    .logo-divider {
-        height: 20px;
     }
     
     .container {
@@ -1687,6 +1755,11 @@ textarea.form-input {
     .slider-card {
         width: 160px;
         height: 220px;
+    }
+
+    .exp-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .exp-card {
@@ -1770,6 +1843,30 @@ textarea.form-input {
     }
     .hero__actions .btn {
         width: 100%;
+    }
+
+    /* Stacked Case Switcher Tabs */
+    .case-tabs {
+        flex-direction: column;
+        gap: 0.75rem;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .case-tab {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+        background-color: rgba(27, 38, 79, 0.03);
+        border: 1px solid rgba(27, 38, 79, 0.08);
+        border-radius: 4px;
+    }
+    .case-tab.active {
+        background-color: var(--clr-space-navy);
+        color: var(--clr-text-light);
+        border-color: var(--clr-space-navy);
+    }
+    .case-tab.active::after {
+        display: none;
     }
 }
 
@@ -1934,3 +2031,130 @@ textarea.form-input {
     }
 }
 
+/* ==========================================================================
+   MULTILINGUAL DROPDOWN & RTL LAYOUT SUPPORT
+   ========================================================================== */
+
+.header__actions-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.lang-selector {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    transition: all var(--tr-fast);
+    height: 38px;
+    box-sizing: border-box;
+}
+
+.lang-selector:hover {
+    border-color: var(--clr-heritage-gold);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.lang-selector i {
+    color: var(--clr-heritage-gold);
+    font-size: 0.85rem;
+}
+
+.lang-selector select {
+    background: transparent;
+    border: none;
+    color: var(--clr-text-light);
+    font-family: var(--ff-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    padding-right: 0.25rem;
+    text-transform: uppercase;
+}
+
+.lang-selector select option {
+    background-color: var(--clr-space-black);
+    color: var(--clr-text-light);
+    font-family: var(--ff-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+/* RTL Urdu Layout Overrides */
+.rtl-layout {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl-layout .header__logos {
+    flex-direction: row; /* Retain standard branding left-to-right order */
+}
+
+.rtl-layout .header__actions-wrap {
+    flex-direction: row-reverse;
+}
+
+.rtl-layout .hero__content {
+    text-align: right;
+    padding-right: 0;
+    padding-left: 2rem;
+}
+
+.rtl-layout .hero__slider-pane {
+    border-left: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding-left: 0;
+    padding-right: 2rem;
+}
+
+.rtl-layout .exp-card {
+    text-align: right;
+}
+
+.rtl-layout .exp-card__b2b-item i {
+    margin-right: 0;
+    margin-left: 0.75rem;
+}
+
+.rtl-layout .requirement-item {
+    text-align: right;
+}
+
+.rtl-layout .requirement-item__icon {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+.rtl-layout .proposal-table {
+    text-align: right;
+}
+
+.rtl-layout .contact-info {
+    text-align: right;
+}
+
+.rtl-layout .contact-info__item i {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+.rtl-layout .footer-socials {
+    justify-content: flex-end;
+    gap: 1.25rem;
+}
+
+/* Mobile RTL Adjustments */
+@media (max-width: 1024px) {
+    .rtl-layout .hero__slider-pane {
+        border-right: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-right: 0;
+    }
+}
