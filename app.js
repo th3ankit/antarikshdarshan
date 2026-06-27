@@ -58,12 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Prevent iOS background scroll bounce when menu is open
-    navMenu.addEventListener('touchmove', (e) => {
-        if (navMenu.classList.contains('header__nav--open')) {
-            e.preventDefault();
-        }
-    }, { passive: false });
+
 
     // Navigation active state highlight on scroll
     function updateActiveNavLink() {
