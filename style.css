@@ -1573,7 +1573,7 @@ textarea.form-input {
         border-width: 3px;
     }
     .event-banner-section + .hero .hero__container {
-        padding-top: 2rem;
+        padding-top: 2rem !important;
     }
 }
 
@@ -1583,7 +1583,7 @@ textarea.form-input {
         padding-bottom: 0.5rem;
     }
     .event-banner-section + .hero .hero__container {
-        padding-top: 1.5rem;
+        padding-top: 1rem !important;
     }
 }
 
@@ -2053,18 +2053,25 @@ textarea.form-input {
 /* Layout compression for small mobile viewports to prevent text & button overlapping */
 @media (max-width: 576px) {
     .hero__container {
-        padding-top: 5rem;
-        padding-bottom: 3rem;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+    }
+    .hero__title-container {
+        margin-bottom: 0.75rem;
     }
     .hero__title {
-        font-size: clamp(1.85rem, 6.5vw, 2.25rem);
+        font-size: clamp(1.6rem, 6.5vw, 2rem);
     }
     .hero__description-container {
-        margin-bottom: 2rem;
+        margin-bottom: 1.25rem;
+    }
+    .hero__subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
     }
     .hero__description {
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
 }
 
