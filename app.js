@@ -480,7 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return null;
                 }
             }
-            return val;
+            return (val !== undefined && val !== null) ? val : null;
         }
         
         // Translate inner content
