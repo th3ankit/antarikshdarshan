@@ -2158,3 +2158,18 @@ textarea.form-input {
         padding-right: 0;
     }
 }
+
+/* Custom Interactive Video Play Link block hover animations */
+.case-video-link-block:hover .video-play-overlay {
+    background: rgba(0, 0, 0, 0.15) !important;
+}
+
+.case-video-link-block:hover .play-btn-circle {
+    transform: scale(1.1);
+    background-color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(247, 159, 53, 0.4) !important;
+}
+
+.play-btn-circle {
+    transition: transform var(--tr-fast), background-color var(--tr-fast), box-shadow var(--tr-fast);
+}
