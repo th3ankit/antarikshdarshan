@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevArrow = document.getElementById('prev-arrow');
     const nextArrow = document.getElementById('next-arrow');
     const discoverBtn = document.getElementById('discover-experience-btn');
+    const requestProposalBtn = document.getElementById('request-proposal-btn');
 
     // Initial positioning
     translateSliderTrack();
@@ -133,19 +134,36 @@ document.addEventListener('DOMContentLoaded', () => {
         transitionToSlide(nextIndex);
     });
 
+    // Scroll helper to avoid offsetParent issues (especially in relative/grid layouts)
+    function smoothScrollTo(element, offset = 100) {
+        if (!element) return;
+        const rect = element.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const absoluteTop = rect.top + scrollTop;
+        window.scrollTo({
+            top: absoluteTop - offset,
+            behavior: 'smooth'
+        });
+    }
+
     // Discover button anchor redirect
-    discoverBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = `exp-detail-${currentSlide}`;
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            const offsetPosition = targetElement.offsetTop - 100;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
+    if (discoverBtn) {
+        discoverBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = `exp-detail-${currentSlide}`;
+            const targetElement = document.getElementById(targetId);
+            smoothScrollTo(targetElement, 100);
+        });
+    }
+
+    // Request proposal button smooth redirect
+    if (requestProposalBtn) {
+        requestProposalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetElement = document.getElementById('connect');
+            smoothScrollTo(targetElement, 100);
+        });
+    }
 
     // Recalibrate layout offsets on window resize
     window.addEventListener('resize', () => {
