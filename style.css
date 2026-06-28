@@ -149,7 +149,8 @@ img {
     min-height: 38px;
 }
 
-.btn--primary {
+.btn--primary,
+.btn--primary:visited {
     background-color: var(--clr-heritage-gold);
     color: var(--clr-space-black);
     box-shadow: 0 4px 20px rgba(247, 159, 53, 0.25);
@@ -157,11 +158,13 @@ img {
 
 .btn--primary:hover {
     background-color: var(--clr-heritage-gold-light);
+    color: var(--clr-space-black);
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(247, 159, 53, 0.4);
 }
 
-.btn--outline {
+.btn--outline,
+.btn--outline:visited {
     border: 1px solid var(--clr-text-light);
     color: var(--clr-text-light);
     background-color: transparent;
@@ -173,7 +176,8 @@ img {
     transform: translateY(-2px);
 }
 
-.btn--outline-gold {
+.btn--outline-gold,
+.btn--outline-gold:visited {
     border: 1px solid var(--clr-heritage-gold);
     color: var(--clr-heritage-gold);
 }

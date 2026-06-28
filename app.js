@@ -135,15 +135,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Scroll helper to avoid offsetParent issues (especially in relative/grid layouts)
-    function smoothScrollTo(element, offset = 100) {
-        if (!element) return;
-        const rect = element.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const absoluteTop = rect.top + scrollTop;
-        window.scrollTo({
-            top: absoluteTop - offset,
-            behavior: 'smooth'
-        });
+    function smoothScrollTo(element, offset = 100, fallbackHash = null) {
+        if (!element) {
+            if (fallbackHash) window.location.hash = fallbackHash;
+            return;
+        }
+        try {
+            const rect = element.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const absoluteTop = rect.top + scrollTop;
+            
+            // Try modern smooth scrolling
+            window.scrollTo({
+                top: absoluteTop - offset,
+                behavior: 'smooth'
+            });
+        } catch (err) {
+            console.warn('Smooth scroll failed, falling back:', err);
+            try {
+                // Fallback to instant scroll
+                const rect = element.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                window.scrollTo(0, rect.top + scrollTop - offset);
+            } catch (fallbackErr) {
+                // Ultimate fallback: standard hash navigation
+                if (fallbackHash) window.location.hash = fallbackHash;
+            }
+        }
     }
 
     // Discover button anchor redirect
@@ -152,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = `exp-detail-${currentSlide}`;
             const targetElement = document.getElementById(targetId);
-            smoothScrollTo(targetElement, 100);
+            smoothScrollTo(targetElement, 100, `#${targetId}`);
         });
     }
 
@@ -161,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
         requestProposalBtn.addEventListener('click', (e) => {
             e.preventDefault();
             const targetElement = document.getElementById('connect');
-            smoothScrollTo(targetElement, 100);
+            smoothScrollTo(targetElement, 100, '#connect');
         });
     }
 
@@ -373,7 +391,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Basic regex checks
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            let currentLang = 'en';
+            try {
+                currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            } catch (err) {
+                console.warn('Storage preference read in validation blocked:', err);
+            }
             const dict = (typeof translations !== 'undefined' && translations[currentLang]) ? translations[currentLang].contact : null;
 
             if (!emailRegex.test(emailVal)) {
@@ -545,12 +568,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (langSelect) {
         langSelect.addEventListener('change', (e) => {
             const selectedLang = e.target.value;
-            localStorage.setItem('preferredLanguage', selectedLang);
+            try {
+                localStorage.setItem('preferredLanguage', selectedLang);
+            } catch (err) {
+                console.warn('Storage preference save blocked:', err);
+            }
             applyTranslations(selectedLang);
         });
         
         // Check for saved user preference, default to English
-        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        let savedLang = 'en';
+        try {
+            savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        } catch (err) {
+            console.warn('Storage preference read blocked:', err);
+        }
         langSelect.value = savedLang;
         applyTranslations(savedLang);
     }
