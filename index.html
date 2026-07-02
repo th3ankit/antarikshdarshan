@@ -413,13 +413,13 @@
             </div>
 
             <!-- Case Switcher Tabs -->
-            <div class="case-tabs">
+            <div class="case-tabs" id="case-study-tabs-container">
                 <button class="case-tab active" data-case="0" data-i18n="case.tab_0">Hamirpur Mahotsav 2026</button>
                 <button class="case-tab" data-case="1" data-i18n="case.tab_1">Mahoba Antariksh Darshan</button>
                 <button class="case-tab" data-case="2" data-i18n="case.tab_2">Jantar Mantar Jaipur</button>
             </div>
 
-            <div class="case-slides-container">
+            <div class="case-slides-container" id="case-study-slides-container">
                 <!-- Case Study 1: Hamirpur -->
                 <div class="case-grid case-slide active" id="case-slide-0">
                     <!-- Left Sticky Meta -->
@@ -732,7 +732,7 @@
                 <h2 class="section-title" data-i18n="gallery.title">Campaign Gallery</h2>
             </div>
             
-            <div class="gallery-grid">
+            <div class="gallery-grid" id="gallery-grid-container">
                 <div class="gallery-item">
                     <img src="assets/moon-at-taj.jpg" alt="Full Moon rising behind Taj Mahal dome">
                     <div class="gallery-item__overlay">
@@ -1014,7 +1014,12 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+     <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
+    <script src="firebase-config.js?v=1"></script>
     <script src="translations.js?v=3"></script>
     <script src="app.js?v=3"></script>
 </body>

@@ -425,35 +425,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 5. CASE STUDY PAGINATION
     // ==========================================
-    const caseTabs = document.querySelectorAll('.case-tab');
-    const caseSlides = document.querySelectorAll('.case-slide');
+    function rebindCaseSwitcher() {
+        const caseTabs = document.querySelectorAll('.case-tab');
+        const caseSlides = document.querySelectorAll('.case-slide');
 
-    if (caseTabs.length && caseSlides.length) {
-        caseTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const caseIndex = parseInt(tab.getAttribute('data-case'));
-                
-                // Set active tab class
-                caseTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                // Set active slide class
-                caseSlides.forEach(slide => {
-                    slide.classList.remove('active');
-                    // Stop any video playing in inactive slides
-                    const video = slide.querySelector('video');
-                    if (video) {
-                        video.pause();
+        if (caseTabs.length && caseSlides.length) {
+            caseTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const caseIndex = parseInt(tab.getAttribute('data-case'));
+                    
+                    // Set active tab class
+                    caseTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Set active slide class
+                    caseSlides.forEach(slide => {
+                        slide.classList.remove('active');
+                        // Stop any video playing in inactive slides
+                        const video = slide.querySelector('video');
+                        if (video) {
+                            video.pause();
+                        }
+                    });
+                    
+                    const activeSlide = document.getElementById(`case-slide-${caseIndex}`);
+                    if (activeSlide) {
+                        activeSlide.classList.add('active');
                     }
                 });
-                
-                const activeSlide = document.getElementById(`case-slide-${caseIndex}`);
-                if (activeSlide) {
-                    activeSlide.classList.add('active');
-                }
             });
-        });
+        }
     }
+
+    // Bind initial static fallback case switcher
+    rebindCaseSwitcher();
 
     // Touch Swipe Gestures for Mobile Stargazing Slider (Directional swipe filtering)
     let touchStartX = 0;
@@ -560,6 +565,14 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.removeAttribute('dir');
         }
         
+        // Re-render dynamic campaigns & gallery in the target language if database loaded
+        if (window.dynamicCampaigns && window.dynamicCampaigns.length) {
+            renderDynamicCampaigns(window.dynamicCampaigns, lang);
+        }
+        if (window.dynamicGalleryItems && window.dynamicGalleryItems.length) {
+            renderDynamicGallery(window.dynamicGalleryItems, lang);
+        }
+        
         // Trigger resize event to recalculate card slider offsets dynamically
         window.dispatchEvent(new Event('resize'));
     }
@@ -585,5 +598,188 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         langSelect.value = savedLang;
         applyTranslations(savedLang);
+    }
+
+    // ==========================================
+    // 6. FIREBASE DYNAMIC CONTENT LOADER
+    // ==========================================
+    window.dynamicCampaigns = null;
+    window.dynamicGalleryItems = null;
+
+    function renderDynamicCampaigns(campaigns, lang = 'en') {
+        const tabsContainer = document.getElementById("case-study-tabs-container");
+        const slidesContainer = document.getElementById("case-study-slides-container");
+        if (!tabsContainer || !slidesContainer) return;
+        
+        let activeTabIdx = 0;
+        const currentActiveTab = tabsContainer.querySelector(".case-tab.active");
+        if (currentActiveTab) {
+            activeTabIdx = parseInt(currentActiveTab.getAttribute("data-case")) || 0;
+        }
+        if (activeTabIdx >= campaigns.length) {
+            activeTabIdx = 0;
+        }
+        
+        tabsContainer.innerHTML = "";
+        slidesContainer.innerHTML = "";
+        
+        campaigns.forEach((campaign, idx) => {
+            const isActive = idx === activeTabIdx;
+            
+            const getField = (fieldObj, fallbackVal = "") => {
+                if (!fieldObj) return fallbackVal;
+                if (typeof fieldObj === 'string') return fieldObj;
+                return fieldObj[lang] || fieldObj['en'] || fallbackVal;
+            };
+            
+            const tabBtn = document.createElement("button");
+            tabBtn.className = `case-tab ${isActive ? 'active' : ''}`;
+            tabBtn.setAttribute("data-case", idx);
+            tabBtn.textContent = getField(campaign.tabTitle) || getField(campaign.title);
+            tabsContainer.appendChild(tabBtn);
+            
+            const slideGrid = document.createElement("div");
+            slideGrid.className = `case-grid case-slide ${isActive ? 'active' : ''}`;
+            slideGrid.id = `case-slide-${idx}`;
+            
+            let mediaHtml = "";
+            if (campaign.videoUrl) {
+                mediaHtml = `
+                    <div class="case-video-wrap" style="margin-bottom: 3rem; border: 1px solid rgba(27, 38, 79, 0.12); padding: 0.75rem; background-color: var(--clr-heritage-cream-dark); border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                        <video controls ${campaign.imageUrls && campaign.imageUrls[0] ? `poster="${campaign.imageUrls[0]}"` : ''} style="width: 100%; border-radius: 2px; display: block; outline: none;">
+                            <source src="${campaign.videoUrl}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="case-img-caption" style="margin-top: 0.75rem; font-weight: 600; font-size: 0.8rem; color: var(--clr-text-dark-muted); text-align: center;">
+                            ${getField(campaign.videoCaption) || getField(campaign.title)}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            let imagesHtml = "";
+            if (campaign.imageUrls && campaign.imageUrls.length) {
+                imagesHtml = `<div class="case-images">`;
+                const displayImages = campaign.imageUrls.slice(0, 2);
+                displayImages.forEach((imgUrl, imgIdx) => {
+                    const captionObj = campaign.imageCaptions ? campaign.imageCaptions[imgIdx] : null;
+                    const altText = getField(captionObj) || getField(campaign.title);
+                    imagesHtml += `
+                        <div class="case-img-wrap">
+                            <img src="${imgUrl}" alt="${altText}">
+                            <div class="case-img-caption">
+                                ${getField(captionObj)}
+                            </div>
+                        </div>
+                    `;
+                });
+                imagesHtml += `</div>`;
+            }
+            
+            slideGrid.innerHTML = `
+                <div class="case-meta">
+                    <span class="case-meta__badge">${getField(campaign.badge) || 'Campaign'}</span>
+                    <h2 class="case-meta__title">${getField(campaign.title)}</h2>
+                    <p class="case-meta__desc" style="font-size: 1.15rem; line-height: 1.6; color: var(--clr-text-dark-muted);">${getField(campaign.desc)}</p>
+                    
+                    <div class="case-meta__stats">
+                        <div class="case-stat">
+                            <div class="case-stat__number">${getField(campaign.statVal1)}</div>
+                            <div class="case-stat__label">${getField(campaign.statLabel1)}</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat__number">${getField(campaign.statVal2)}</div>
+                            <div class="case-stat__label">${getField(campaign.statLabel2)}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-content">
+                    <p>${getField(campaign.paragraph1)}</p>
+                    <p>${getField(campaign.paragraph2)}</p>
+                    ${mediaHtml}
+                    <p>${getField(campaign.paragraph3)}</p>
+                    ${imagesHtml}
+                </div>
+            `;
+            slidesContainer.appendChild(slideGrid);
+        });
+        
+        rebindCaseSwitcher();
+    }
+
+    function renderDynamicGallery(galleryItems, lang = 'en') {
+        const gridContainer = document.getElementById("gallery-grid-container");
+        if (!gridContainer) return;
+        
+        gridContainer.innerHTML = "";
+        
+        galleryItems.forEach((item) => {
+            const getField = (fieldObj, fallbackVal = "") => {
+                if (!fieldObj) return fallbackVal;
+                if (typeof fieldObj === 'string') return fieldObj;
+                return fieldObj[lang] || fieldObj['en'] || fallbackVal;
+            };
+            
+            const titleText = getField(item.title);
+            const locationText = getField(item.location);
+            
+            const cell = document.createElement("div");
+            cell.className = "gallery-item";
+            cell.innerHTML = `
+                <img src="${item.imageUrl}" alt="${titleText}">
+                <div class="gallery-item__overlay">
+                    <div>
+                        <h4 class="gallery-item__title">${titleText}</h4>
+                        <span class="gallery-item__loc">${locationText}</span>
+                    </div>
+                </div>
+            `;
+            gridContainer.appendChild(cell);
+        });
+    }
+
+    // Load data from Firestore if configured
+    function loadDynamicData(db) {
+        db.collection("campaigns").orderBy("order", "asc").get().then((querySnapshot) => {
+            if (!querySnapshot.empty) {
+                const campaigns = [];
+                querySnapshot.forEach((doc) => {
+                    campaigns.push({ id: doc.id, ...doc.data() });
+                });
+                window.dynamicCampaigns = campaigns;
+                const currentLang = langSelect ? langSelect.value : 'en';
+                renderDynamicCampaigns(campaigns, currentLang);
+            }
+        }).catch((err) => {
+            console.error("Error loading dynamic campaigns:", err);
+        });
+
+        db.collection("gallery").orderBy("createdAt", "desc").get().then((querySnapshot) => {
+            if (!querySnapshot.empty) {
+                const items = [];
+                querySnapshot.forEach((doc) => {
+                    items.push({ id: doc.id, ...doc.data() });
+                });
+                window.dynamicGalleryItems = items;
+                const currentLang = langSelect ? langSelect.value : 'en';
+                renderDynamicGallery(items, currentLang);
+            }
+        }).catch((err) => {
+            console.error("Error loading dynamic gallery:", err);
+        });
+    }
+
+    // Initialize Firebase if configured
+    if (typeof firebase !== 'undefined' && window.isFirebaseConfigured) {
+        try {
+            if (!firebase.apps.length) {
+                firebase.initializeApp(window.firebaseConfig);
+            }
+            const db = firebase.firestore();
+            loadDynamicData(db);
+        } catch (err) {
+            console.error("Failed to initialize Firebase database client:", err);
+        }
     }
 });

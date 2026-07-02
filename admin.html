@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antariksh Darshan - Admin Dashboard</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Existing styles + Admin styles -->
+    <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body class="admin-body">
+
+    <!-- Loading State Overlay -->
+    <div id="loader-overlay" class="admin-loader-overlay">
+        <div class="admin-spinner"></div>
+        <div id="loader-text" class="admin-loader-text">Loading admin desk...</div>
+    </div>
+
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-header__brand">
+            <i class="fa-solid fa-satellite-dish" style="color: var(--clr-heritage-gold); font-size: 1.5rem;"></i>
+            <span class="admin-header__title">Antariksh Darshan Admin Desk</span>
+        </div>
+        <div class="admin-header__actions">
+            <a href="index.html" class="admin-btn admin-btn--outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                <i class="fa-solid fa-arrow-left"></i> View Live Site
+            </a>
+            <button id="logout-btn" class="admin-btn admin-btn--outline" style="padding: 0.5rem 1rem; font-size: 0.85rem; display: none;">
+                <i class="fa-solid fa-right-from-bracket"></i> Log Out
+            </button>
+        </div>
+    </header>
+
+    <!-- 1. LOGIN SCREEN -->
+    <div id="login-wrapper" class="admin-login-wrapper">
+        <div class="admin-card">
+            <h2 class="admin-card__title">Sign In</h2>
+            <p class="admin-card__subtitle">Authenticate to manage website campaigns</p>
+            
+            <form id="login-form">
+                <div class="admin-form-group">
+                    <label for="login-email" class="admin-label">Email Address</label>
+                    <input type="email" id="login-email" class="admin-input" placeholder="admin@space-india.com" required autocomplete="email">
+                </div>
+                <div class="admin-form-group">
+                    <label for="login-password" class="admin-label">Password</label>
+                    <input type="password" id="login-password" class="admin-input" placeholder="••••••••" required autocomplete="current-password">
+                </div>
+                
+                <button type="submit" class="admin-btn admin-btn--block" style="margin-top: 2rem;">
+                    Sign In <i class="fa-solid fa-right-to-bracket"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. MAIN DASHBOARD CONTENT -->
+    <div id="dashboard-wrapper" class="admin-dashboard-wrapper">
+        <!-- Navigation Menu Tabs -->
+        <div class="admin-menu-tabs">
+            <button class="admin-menu-tab active" data-tab="campaigns-tab">
+                <i class="fa-solid fa-earth-asia"></i> Manage Campaigns
+            </button>
+            <button class="admin-menu-tab" data-tab="gallery-tab">
+                <i class="fa-solid fa-images"></i> Manage Gallery
+            </button>
+        </div>
+
+        <!-- TAB CONTENT: CAMPAIGNS -->
+        <div id="campaigns-tab" class="admin-tab-content" style="display: block;">
+            <div class="admin-grid">
+                <!-- Left: List of campaigns -->
+                <div class="admin-section-card">
+                    <h3 class="admin-section-title">Active Campaigns</h3>
+                    <div id="campaigns-list" class="admin-items-list">
+                        <!-- Filled dynamically -->
+                        <div style="color: var(--clr-text-muted); text-align: center; padding: 2rem;">No campaigns found. Add one to get started.</div>
+                    </div>
+                </div>
+
+                <!-- Right: Form to add/edit campaign -->
+                <div class="admin-section-card">
+                    <h3 id="campaign-form-title" class="admin-section-title">Add New Campaign</h3>
+                    <form id="campaign-form">
+                        <input type="hidden" id="campaign-id">
+                        
+                        <!-- Order & Media -->
+                        <div class="admin-row">
+                            <div class="admin-form-group">
+                                <label for="camp-order" class="admin-label">Display Order</label>
+                                <input type="number" id="camp-order" class="admin-input" value="1" min="1" required>
+                            </div>
+                            <div class="admin-form-group">
+                                <label for="camp-video-url" class="admin-label">Video URL (MP4)</label>
+                                <input type="url" id="camp-video-url" class="admin-input" placeholder="e.g. assets/jaipur-space-day.mp4">
+                            </div>
+                        </div>
+
+                        <!-- Localized Language Fields Container -->
+                        <div class="admin-form-group" style="margin-top: 1.5rem;">
+                            <label class="admin-label">Localized Copy (Enter text per language)</label>
+                            
+                            <!-- Language select tabs -->
+                            <div class="admin-lang-tabs">
+                                <button type="button" class="admin-lang-tab active" data-lang="en">EN</button>
+                                <button type="button" class="admin-lang-tab" data-lang="hi">HI</button>
+                                <button type="button" class="admin-lang-tab" data-lang="mr">MR</button>
+                                <button type="button" class="admin-lang-tab" data-lang="te">TE</button>
+                                <button type="button" class="admin-lang-tab" data-lang="ta">TA</button>
+                                <button type="button" class="admin-lang-tab" data-lang="kn">KN</button>
+                                <button type="button" class="admin-lang-tab" data-lang="pa">PA</button>
+                                <button type="button" class="admin-lang-tab" data-lang="ur">UR</button>
+                            </div>
+
+                            <!-- English Fields -->
+                            <div class="admin-lang-content active" data-lang-panel="en">
+                                <div class="admin-row">
+                                    <div class="admin-form-group">
+                                        <label class="admin-label">Tab Title (Short)</label>
+                                        <input type="text" id="camp-tabTitle-en" class="admin-input" placeholder="Hamirpur 2026">
+                                    </div>
+                                    <div class="admin-form-group">
+                                        <label class="admin-label">Badge</label>
+                                        <input type="text" id="camp-badge-en" class="admin-input" placeholder="Flagship Campaign">
+                                    </div>
+                                </div>
+                                <div class="admin-form-group">
+                                    <label class="admin-label">Campaign Title</label>
+                                    <input type="text" id="camp-title-en" class="admin-input" placeholder="Antariksh Darshan: Hamirpur" required>
+                                </div>
+                                <div class="admin-form-group">
+                                    <label class="admin-label">Card Subtitle Description (Hero)</label>
+                                    <textarea id="camp-desc-en" class="admin-input" placeholder="Brief summary for sidebar card..." required></textarea>
+                                </div>
+                                <div class="admin-row">
+                                    <div class="admin-form-group">
+                                        <label class="admin-label">Stat 1 Value</label>
+                                        <input type="text" id="camp-statVal1-en" class="admin-input" placeholder="1,000+">
+                                    </div>
+                                    <div class="admin-form-group">
+                                        <label class="admin-label">Stat 1 Label</label>
+                                        <input type="text" id="camp-statLabel1-en" class="admin-input" placeholder="Students daily">
+                                    </div>
+                                </div>
+                                <div class="admin-row">
+                                    <div class="admin-form-group">
+                                        <label class="admin-label">Stat 2 Value</label>
+                                        <input type="text" id="camp-statVal2-en" class="admin-input" placeholder="5 Days">
+                                    </div>
+                                    <div class="admin-form-group">
+                                        <label class="admin-label">Stat 2 Label</label>
+                                        <input type="text" id="camp-statLabel2-en" class="admin-input" placeholder="Site Activation">
+                                    </div>
+                                </div>
+                                <div class="admin-form-group">
+                                    <label class="admin-label">Paragraph 1 (Main content)</label>
+                                    <textarea id="camp-paragraph1-en" class="admin-input" placeholder="Story paragraph 1..." required></textarea>
+                                </div>
+                                <div class="admin-form-group">
+                                    <label class="admin-label">Paragraph 2</label>
+                                    <textarea id="camp-paragraph2-en" class="admin-input" placeholder="Story paragraph 2..."></textarea>
+                                </div>
+                                <div class="admin-form-group">
+                                    <label class="admin-label">Video Caption</label>
+                                    <input type="text" id="camp-videoCaption-en" class="admin-input" placeholder="Official Event Video: ...">
+                                </div>
+                                <div class="admin-form-group">
+                                    <label class="admin-label">Paragraph 3</label>
+                                    <textarea id="camp-paragraph3-en" class="admin-input" placeholder="Story paragraph 3..."></textarea>
+                                </div>
+                                <div class="admin-row">
+                                    <div class="admin-form-group">
+                                        <label class="admin-label">Image 1 Caption</label>
+                                        <input type="text" id="camp-imageCaption1-en" class="admin-input" placeholder="Caption for image 1">
+                                    </div>
+                                    <div class="admin-form-group">
+                                        <label class="admin-label">Image 2 Caption</label>
+                                        <input type="text" id="camp-imageCaption2-en" class="admin-input" placeholder="Caption for image 2">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Localized Language Panel Template (Created programmatically for other languages) -->
+                            <div class="admin-lang-content" data-lang-panel="hi"></div>
+                            <div class="admin-lang-content" data-lang-panel="mr"></div>
+                            <div class="admin-lang-content" data-lang-panel="te"></div>
+                            <div class="admin-lang-content" data-lang-panel="ta"></div>
+                            <div class="admin-lang-content" data-lang-panel="kn"></div>
+                            <div class="admin-lang-content" data-lang-panel="pa"></div>
+                            <div class="admin-lang-content" data-lang-panel="ur"></div>
+                        </div>
+
+                        <!-- Direct Campaign Image Uploader -->
+                        <div class="admin-form-group" style="margin-top: 2rem;">
+                            <label class="admin-label">Campaign Images (Upload up to 2 images)</label>
+                            <div id="campaign-dropzone" class="admin-dropzone">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <div class="admin-dropzone__text">Drag & drop images here, or <strong>click to browse</strong></div>
+                                <input type="file" id="campaign-file-input" style="display: none;" accept="image/*" multiple>
+                            </div>
+                            <div id="campaign-images-previews" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                <!-- Previews of uploaded images -->
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; margin-top: 2.5rem;">
+                            <button type="submit" class="admin-btn">
+                                <i class="fa-solid fa-floppy-disk"></i> Save Campaign
+                            </button>
+                            <button type="button" id="cancel-campaign-btn" class="admin-btn admin-btn--outline" style="display: none;">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT: GALLERY -->
+        <div id="gallery-tab" class="admin-tab-content" style="display: none;">
+            <div class="admin-grid">
+                <!-- Left: List of gallery items -->
+                <div class="admin-section-card">
+                    <h3 class="admin-section-title">Gallery Photos</h3>
+                    <div id="gallery-list" class="admin-items-list">
+                        <!-- Filled dynamically -->
+                        <div style="color: var(--clr-text-muted); text-align: center; padding: 2rem;">No gallery photos found. Upload one to get started.</div>
+                    </div>
+                </div>
+
+                <!-- Right: Form to add gallery item -->
+                <div class="admin-section-card">
+                    <h3 class="admin-section-title">Upload New Photo</h3>
+                    <form id="gallery-form">
+                        <!-- Direct Image Uploader -->
+                        <div class="admin-form-group">
+                            <label class="admin-label">Gallery Photo</label>
+                            <div id="gallery-dropzone" class="admin-dropzone">
+                                <i class="fa-solid fa-image" style="font-size: 2.25rem;"></i>
+                                <div class="admin-dropzone__text">Drag & drop an image here, or <strong>click to browse</strong></div>
+                                <input type="file" id="gallery-file-input" style="display: none;" accept="image/*" required>
+                            </div>
+                            <div id="gallery-image-preview" style="display: none;" class="admin-file-preview">
+                                <img id="gallery-preview-img" src="" alt="Preview">
+                                <div class="admin-file-preview__info">
+                                    <div id="gallery-preview-name" class="admin-file-preview__name">filename.jpg</div>
+                                    <div id="gallery-preview-size" class="admin-file-preview__size">0 KB</div>
+                                </div>
+                                <button type="button" id="remove-gallery-preview" class="admin-file-preview__remove">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Localized Fields (Title & Location) -->
+                        <div class="admin-form-group" style="margin-top: 1.5rem;">
+                            <label class="admin-label">Photo Description per Language</label>
+                            
+                            <div class="admin-lang-tabs">
+                                <button type="button" class="admin-lang-tab active" data-lang="en">EN</button>
+                                <button type="button" class="admin-lang-tab" data-lang="hi">HI</button>
+                                <button type="button" class="admin-lang-tab" data-lang="mr">MR</button>
+                                <button type="button" class="admin-lang-tab" data-lang="te">TE</button>
+                                <button type="button" class="admin-lang-tab" data-lang="ta">TA</button>
+                                <button type="button" class="admin-lang-tab" data-lang="kn">KN</button>
+                                <button type="button" class="admin-lang-tab" data-lang="pa">PA</button>
+                                <button type="button" class="admin-lang-tab" data-lang="ur">UR</button>
+                            </div>
+
+                            <!-- English Form Panel -->
+                            <div class="admin-lang-content active" data-lang-panel="en">
+                                <div class="admin-form-group">
+                                    <label class="admin-label">Photo Caption Title</label>
+                                    <input type="text" id="gal-title-en" class="admin-input" placeholder="e.g. VIP Telescope Session" required>
+                                </div>
+                                <div class="admin-form-group">
+                                    <label class="admin-label">Location Tag</label>
+                                    <input type="text" id="gal-location-en" class="admin-input" placeholder="e.g. Jantar Mantar, Jaipur" required>
+                                </div>
+                            </div>
+
+                            <!-- Programmatic Localized Panels -->
+                            <div class="admin-lang-content" data-lang-panel="hi"></div>
+                            <div class="admin-lang-content" data-lang-panel="mr"></div>
+                            <div class="admin-lang-content" data-lang-panel="te"></div>
+                            <div class="admin-lang-content" data-lang-panel="ta"></div>
+                            <div class="admin-lang-content" data-lang-panel="kn"></div>
+                            <div class="admin-lang-content" data-lang-panel="pa"></div>
+                            <div class="admin-lang-content" data-lang-panel="ur"></div>
+                        </div>
+
+                        <button type="submit" class="admin-btn" style="margin-top: 2rem;">
+                            <i class="fa-solid fa-cloud-arrow-up"></i> Upload to Gallery
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase CDN compat libraries -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
+    <!-- Firebase config credentials -->
+    <script src="firebase-config.js?v=1"></script>
+    <!-- Dashboard Core Code -->
+    <script src="admin.js?v=1"></script>
+</body>
+</html>
